@@ -31,10 +31,10 @@ export const ContactSection = () => (
         <div>
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Organizations</h3>
           <div className="space-y-4">
-            <a href={SITE_CONFIG.sisterTroop.url} target="_blank" rel="noopener noreferrer" 
+            <a href={SITE_CONFIG.brotherTroop.url} target="_blank" rel="noopener noreferrer" 
                className="flex items-center space-x-3 text-ship4-blue hover:text-blue-600 transition-colors">
               <ExternalLink size={20} />
-              <span>{SITE_CONFIG.sisterTroop.name} (Sister Troop)</span>
+              <span>{SITE_CONFIG.brotherTroop.name} (Brother Troop)</span>
             </a>
             <a href={SITE_CONFIG.parentOrg.url} target="_blank" rel="noopener noreferrer"
                className="flex items-center space-x-3 text-ship4-blue hover:text-blue-600 transition-colors">

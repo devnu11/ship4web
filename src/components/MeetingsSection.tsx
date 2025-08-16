@@ -11,8 +11,8 @@ export const MeetingsSection = () => (
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="bg-ship4-blue text-white p-6">
-            <h3 className="text-2xl font-bold mb-2">Weekly Meetings</h3>
-            <p className="opacity-90">Join us every week for training, planning, and fellowship</p>
+            <h3 className="text-2xl font-bold mb-2">Monthly Meetings</h3>
+            <p className="opacity-90">Join us for fun, fellowship and following seas</p>
           </div>
           
           <div className="p-6">
@@ -23,7 +23,7 @@ export const MeetingsSection = () => (
                   When
                 </h4>
                 <p className="text-gray-700 mb-2">{SITE_CONFIG.meetingTime}</p>
-                <p className="text-sm text-gray-600">Every Sunday</p>
+                <p className="text-sm text-gray-600">Second Sunday</p>
               </div>
               
               <div>

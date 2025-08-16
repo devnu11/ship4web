@@ -5,11 +5,11 @@ export const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
-          <div className="w-8 h-8 bg-ship4-blue rounded-full flex items-center justify-center">
-            <span className="font-bold">4</span>
+          <div className="w-48 h-48 bg-ship4-blue rounded-full flex items-center justify-center">
+            <img src="./logo transparent.svg" alt="Sea Scout Ship 4 Logo" className="w-full h-full object-contain" />
           </div>
-          <span className="text-xl font-bold">{SITE_CONFIG.shipName}</span>
         </div>
+        <p className="text-xl font-bold">{SITE_CONFIG.shipName}</p>
         <p className="text-gray-400 italic mb-4">{SITE_CONFIG.motto}</p>
         <p className="text-gray-500 text-sm">
           © 2025 Sea Scout Ship 4, Dripping Springs. Chartered by {SITE_CONFIG.charterOrg}.

@@ -1,15 +1,18 @@
-import { Camera } from './ui/Camera';
-import type { ImagePlaceholder } from '../types';
+interface GalleryImage {
+  src: string;
+  title: string;
+  alt: string;
+}
 
 export const GallerySection = () => {
-  // Image suggestions for scout management
-  const imagePlaceholders: ImagePlaceholder[] = [
-    { id: 1, title: "Sailing Training", description: "Replace with: Scouts learning to sail on Lake Travis" },
-    { id: 2, title: "Knot Tying Workshop", description: "Replace with: Youth practicing seamanship skills" },
-    { id: 3, title: "Seabase Adventure", description: "Replace with: High adventure photos from Florida Sea Base" },
-    { id: 4, title: "Leadership Training", description: "Replace with: Ship officers in leadership roles" },
-    { id: 5, title: "Community Service", description: "Replace with: Scouts participating in water conservation projects" },
-    { id: 6, title: "Awards Ceremony", description: "Replace with: Advancement and recognition events" }
+  // Ship 4 photo gallery
+  const galleryImages = [
+    { src: "./helm.jpg", title: "At the Helm", alt: "Scout at the helm of a large yacht." },
+    { src: "./sunfish.jpg", title: "Lake Travis", alt: "Learning to sail on Sunfish boats" },
+    { src: "./sunset.jpg", title: "Red Sky at Night", alt: "Beautiful sunset at Florida Sea Base" },
+    { src: "./gale.jpg", title: "Blowing a Gale", alt: "Seamanship during storm force winds" },
+    { src: "./snorkel jump.jpg", title: "Snorkel Adventure", alt: "Scouts enjoying snorkeling activities" },
+    { src: "./snorkel.jpg", title: "Buddy Check", alt: "Scout Diving on a Coral Reef" }
   ];
 
   return (
@@ -21,26 +24,21 @@ export const GallerySection = () => {
         </div>
         
         <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {imagePlaceholders.map(placeholder => (
-            <div key={placeholder.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center">
-                <div className="text-center text-blue-800">
-                  <Camera size={48} className="mx-auto mb-2" />
-                  <p className="font-semibold">{placeholder.title}</p>
-                </div>
+          {galleryImages.map(image => (
+            <div key={image.src} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <div className="p-4">
-                <p className="text-sm text-gray-600">{placeholder.description}</p>
+                <h3 className="font-semibold text-gray-900 mb-1">{image.title}</h3>
+                <p className="text-sm text-gray-600">{image.alt}</p>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="text-center mt-8">
-          <p className="text-gray-600 bg-yellow-100 border border-yellow-300 rounded-lg p-4 max-w-2xl mx-auto">
-            <strong>For Scout Leaders:</strong> Replace these placeholders with actual photos from Seabase adventures, 
-            training sessions, and Ship 4 activities. Recommended image size: 400x300px minimum.
-          </p>
         </div>
       </div>
     </section>

@@ -12,11 +12,11 @@ export const SITE_CONFIG = {
   meetingLocation: "Patriots Hall, US 290, Dripping Springs, TX",
   
   // Contact Information
-  email: "ship4@dsscouts.com", // TODO: Replace with actual email
-  phone: "(512) XXX-XXXX", // TODO: Replace with actual phone
+  email: "ship4@forevans.com", // TODO: Replace with actual email
+  phone: "(201) 743-8267", // TODO: Replace with actual phone
   
   // Related Organizations
-  sisterTroop: {
+  brotherTroop: {
     name: "Troop 4",
     url: "https://troop4ds.com"
   },
