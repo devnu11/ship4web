@@ -27,9 +27,12 @@ export const HeroSection = () => (
         </div>
       </div>
       
-      <button className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+      <a 
+        href="#contact" 
+        className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors inline-block"
+      >
         Join Our Crew
-      </button>
+      </a>
     </div>
   </section>
 );

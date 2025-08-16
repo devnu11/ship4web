@@ -50,9 +50,12 @@ export const ContactSection = () => (
       </div>
       
       <div className="text-center mt-12">
-        <button className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+        <a 
+          href={`mailto:${SITE_CONFIG.email}?subject=Interested in Sea Scout Ship 4`}
+          className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors inline-block"
+        >
           Contact Us Today
-        </button>
+        </a>
       </div>
     </div>
   </section>
