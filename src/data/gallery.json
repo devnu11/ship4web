@@ -1,0 +1,63 @@
+{
+  "title": "Photo Gallery",
+  "subtitle": "Memories from our maritime adventures",
+  "categories": [
+    {
+      "name": "Training",
+      "images": [
+        {
+          "id": 1,
+          "title": "Sailing Training",
+          "description": "Replace with: Scouts learning to sail on Lake Travis",
+          "filename": "sailing-training-01.jpg",
+          "alt": "Scouts learning sailing techniques on Lake Travis"
+        },
+        {
+          "id": 2,
+          "title": "Knot Tying Workshop",
+          "description": "Replace with: Youth practicing seamanship skills",
+          "filename": "knots-workshop-01.jpg",
+          "alt": "Sea Scouts practicing knot tying skills"
+        }
+      ]
+    },
+    {
+      "name": "Adventures",
+      "images": [
+        {
+          "id": 3,
+          "title": "Seabase Adventure",
+          "description": "Replace with: High adventure photos from Florida Sea Base",
+          "filename": "seabase-adventure-01.jpg",
+          "alt": "Ship 4 crew at Florida Sea Base high adventure"
+        },
+        {
+          "id": 4,
+          "title": "Lake Expedition",
+          "description": "Replace with: Multi-day sailing expedition photos",
+          "filename": "lake-expedition-01.jpg",
+          "alt": "Multi-day sailing expedition with Ship 4"
+        }
+      ]
+    },
+    {
+      "name": "Leadership",
+      "images": [
+        {
+          "id": 5,
+          "title": "Leadership Training",
+          "description": "Replace with: Ship officers in leadership roles",
+          "filename": "leadership-training-01.jpg",
+          "alt": "Ship officers demonstrating leadership skills"
+        },
+        {
+          "id": 6,
+          "title": "Awards Ceremony",
+          "description": "Replace with: Advancement and recognition events",
+          "filename": "awards-ceremony-01.jpg",
+          "alt": "Sea Scouts receiving advancement awards"
+        }
+      ]
+    }
+  ]
+}
