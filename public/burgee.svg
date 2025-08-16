@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 -100 300 200">
+	<!-- Burgee triangle -->
+	<defs>
+	<polygon id="burgeePoints" points="0,-100 0,100 300,0" />
+	<clipPath id="burgeeClip">
+		<use href="#burgeePoints" />
+	</clipPath>
+	</defs>
+
+	<!-- <polygon points="0,-100 0,100 300,100 300,-100" fill="transparent"/> -->
+
+	<!-- Field - Blue #00205B or darkblue-->
+	<use href="#burgeePoints" fill="#00205B" id="field"/>
+
+
+	<g clip-path="url(#burgeeClip)" >
+		<!-- Diagonal stripes at 64° clipped to burgee -->
+		<g transform="rotate(-64 145 0)">
+			<!-- White stripe -->
+			<rect x="0" y="-6" width="300" height="6" fill="white" id="whitestripe"/>
+			<!-- Red stripe #C8102E or red or maroon-->
+			<rect x="0" y="0" width="300" height="40" fill="#C81010" id="redstripe"/>
+		</g>
+	</g>
+</svg>
+
+<!-- 
+From USCG: https://upload.wikimedia.org/wikipedia/commons/9/93/CGMark_W.svg
+
+<g xmlns="http://www.w3.org/2000/svg" id="g5">
+	<polygon points="414.287,344.451 577.891,9 279.072,9 115.461,344.451 " id="orange" style="fill:#dc3932"/>
+	<polygon points="27.89,344.451 76.739,344.451 240.348,9 191.5,9 " id="blue" style="fill:#0072af"/>
+	<polygon points="279.072,9 240.348,9 76.739,344.451 115.461,344.451 " id="white" style="fill:#ffffff"/>
+</g>
+-->
