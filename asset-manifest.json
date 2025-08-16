@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.js": "/ship4web/static/js/main.31d6cfe0.js",
-    "index.html": "/ship4web/index.html"
+    "main.js": "/ship4web/static/js/main.13cfcfe8.js",
+    "index.html": "/ship4web/index.html",
+    "main.13cfcfe8.js.map": "/ship4web/static/js/main.13cfcfe8.js.map"
   },
   "entrypoints": [
-    "static/js/main.31d6cfe0.js"
+    "static/js/main.13cfcfe8.js"
   ]
 }
