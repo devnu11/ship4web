@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "homepage": "https://devnu11.github.io/ship4web",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "lucide-react": "^0.539.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1"
   },
   "scripts": {

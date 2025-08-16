@@ -56,3 +56,5 @@ const ContactSection = () => (
     </div>
   </section>
 );
+
+export default ContactSection;
