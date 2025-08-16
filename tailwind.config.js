@@ -6,7 +6,12 @@ export default {
     "./sea-scout-ship-4.tsx"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'ship4-blue': '#00205B',
+        'ship4-red': '#C81010',
+      }
+    },
   },
   plugins: [],
 }

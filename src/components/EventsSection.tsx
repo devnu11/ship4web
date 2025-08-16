@@ -52,13 +52,13 @@ export const EventsSection = () => {
         <div className="max-w-4xl mx-auto">
           {loading ? (
             <div className="text-center py-8">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-800 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-ship4-blue mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading events...</p>
             </div>
           ) : (
             <div className="space-y-4">
               {events.map(event => (
-                <div key={event.id} className="bg-gray-50 rounded-lg p-6 border-l-4 border-blue-800">
+                <div key={event.id} className="bg-gray-50 rounded-lg p-6 border-l-4 border-ship4-blue">
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900">{event.title}</h3>
@@ -71,7 +71,7 @@ export const EventsSection = () => {
                         {event.location}
                       </p>
                     </div>
-                    <button className="mt-4 md:mt-0 bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                    <button className="mt-4 md:mt-0 bg-ship4-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
                       Learn More
                     </button>
                   </div>

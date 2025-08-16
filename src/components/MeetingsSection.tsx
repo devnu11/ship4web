@@ -10,7 +10,7 @@ export const MeetingsSection = () => (
       
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="bg-blue-800 text-white p-6">
+          <div className="bg-ship4-blue text-white p-6">
             <h3 className="text-2xl font-bold mb-2">Weekly Meetings</h3>
             <p className="opacity-90">Join us every week for training, planning, and fellowship</p>
           </div>
@@ -19,7 +19,7 @@ export const MeetingsSection = () => (
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-lg mb-4 flex items-center">
-                  <Clock className="mr-2 text-blue-800" size={20} />
+                  <Clock className="mr-2 text-ship4-blue" size={20} />
                   When
                 </h4>
                 <p className="text-gray-700 mb-2">{SITE_CONFIG.meetingTime}</p>
@@ -28,7 +28,7 @@ export const MeetingsSection = () => (
               
               <div>
                 <h4 className="font-semibold text-lg mb-4 flex items-center">
-                  <MapPin className="mr-2 text-blue-800" size={20} />
+                  <MapPin className="mr-2 text-ship4-blue" size={20} />
                   Where
                 </h4>
                 <p className="text-gray-700 mb-2">Patriots Hall</p>

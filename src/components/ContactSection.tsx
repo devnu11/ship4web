@@ -14,15 +14,15 @@ export const ContactSection = () => (
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <Mail className="text-blue-800" size={20} />
+              <Mail className="text-ship4-blue" size={20} />
               <span className="text-gray-700">{SITE_CONFIG.email}</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Phone className="text-blue-800" size={20} />
+              <Phone className="text-ship4-blue" size={20} />
               <span className="text-gray-700">{SITE_CONFIG.phone}</span>
             </div>
             <div className="flex items-center space-x-3">
-              <MapPin className="text-blue-800" size={20} />
+              <MapPin className="text-ship4-blue" size={20} />
               <span className="text-gray-700">{SITE_CONFIG.meetingLocation}</span>
             </div>
           </div>
@@ -32,17 +32,17 @@ export const ContactSection = () => (
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Organizations</h3>
           <div className="space-y-4">
             <a href={SITE_CONFIG.sisterTroop.url} target="_blank" rel="noopener noreferrer" 
-               className="flex items-center space-x-3 text-blue-800 hover:text-blue-600 transition-colors">
+               className="flex items-center space-x-3 text-ship4-blue hover:text-blue-600 transition-colors">
               <ExternalLink size={20} />
               <span>{SITE_CONFIG.sisterTroop.name} (Sister Troop)</span>
             </a>
             <a href={SITE_CONFIG.parentOrg.url} target="_blank" rel="noopener noreferrer"
-               className="flex items-center space-x-3 text-blue-800 hover:text-blue-600 transition-colors">
+               className="flex items-center space-x-3 text-ship4-blue hover:text-blue-600 transition-colors">
               <ExternalLink size={20} />
               <span>{SITE_CONFIG.parentOrg.name}</span>
             </a>
             <div className="flex items-center space-x-3">
-              <Users className="text-blue-800" size={20} />
+              <Users className="text-ship4-blue" size={20} />
               <span className="text-gray-700">{SITE_CONFIG.charterOrg} (Charter Organization)</span>
             </div>
           </div>
@@ -50,7 +50,7 @@ export const ContactSection = () => (
       </div>
       
       <div className="text-center mt-12">
-        <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+        <button className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
           Contact Us Today
         </button>
       </div>

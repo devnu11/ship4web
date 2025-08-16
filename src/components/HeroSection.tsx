@@ -1,15 +1,15 @@
-import { Anchor, Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 export const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-800 via-blue-700 to-red-600">
+  <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-ship4-blue via-blue-700 to-ship4-red">
     {/* TODO: Replace with actual hero image from Seabase */}
     <div className="absolute inset-0 bg-black/30"></div>
     <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
       <div className="mb-8">
-        {/* Ship Logo Placeholder */}
-        <div className="w-32 h-32 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-          <Anchor size={64} className="text-white" />
+        {/* Ship Logo */}
+        <div className="w-48 h-48 mx-auto mb-6 bg-ship4-blue rounded-full flex items-center justify-center p-6">
+          <img src="./logo.svg" alt="Sea Scout Ship 4 Logo" className="w-full h-full object-contain" />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-4">{SITE_CONFIG.shipName}</h1>
         <p className="text-xl md:text-2xl mb-2 font-light italic">{SITE_CONFIG.motto}</p>
@@ -27,7 +27,7 @@ export const HeroSection = () => (
         </div>
       </div>
       
-      <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+      <button className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
         Join Our Crew
       </button>
     </div>

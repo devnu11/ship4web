@@ -30,10 +30,10 @@ export const SITE_CONFIG = {
   googleCalendarId: "YOUR_CALENDAR_ID@group.calendar.google.com",
   googleSheetsId: "YOUR_SPREADSHEET_ID",
   
-  // Color Palette Suggestions
+  // Official Ship 4 Color Palette
   colors: {
-    primary: "#1e40af", // Navy blue from logo
-    secondary: "#dc2626", // Red from logo
+    primary: "#00205B", // Ship 4 Navy Blue
+    secondary: "#C81010", // Ship 4 Red
     accent: "#0891b2", // Sea blue
     background: "#f8fafc",
     text: "#1e293b"

@@ -14,21 +14,21 @@ export const AboutSection = () => (
       <div className="grid md:grid-cols-3 gap-8">
         <div className="text-center">
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Users className="text-blue-800" size={32} />
+            <Users className="text-ship4-blue" size={32} />
           </div>
           <h3 className="text-xl font-semibold mb-2">Leadership</h3>
           <p className="text-gray-600">Develop leadership skills through hands-on maritime experiences and team-building activities.</p>
         </div>
         <div className="text-center">
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Anchor className="text-blue-800" size={32} />
+            <Anchor className="text-ship4-blue" size={32} />
           </div>
           <h3 className="text-xl font-semibold mb-2">Seamanship</h3>
           <p className="text-gray-600">Learn essential boating skills, navigation, and water safety in a supportive environment.</p>
         </div>
         <div className="text-center">
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Calendar className="text-blue-800" size={32} />
+            <Calendar className="text-ship4-blue" size={32} />
           </div>
           <h3 className="text-xl font-semibold mb-2">Adventure</h3>
           <p className="text-gray-600">Experience exciting adventures on the water and participate in regional Sea Scout events.</p>
