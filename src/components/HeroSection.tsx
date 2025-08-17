@@ -8,8 +8,8 @@ export const HeroSection = () => (
     <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
       <div className="mb-8">
         {/* Ship Logo */}
-        <div className="w-48 h-48 mx-auto mb-6 bg-ship4-blue rounded-full flex items-center justify-center p-6">
-          <img src="./logo.svg" alt="Sea Scout Ship 4 Logo" className="w-full h-full object-contain" />
+        <div className="w-80 h-80 mx-auto mb-6 bg-ship4-blue rounded-full flex items-center justify-center p-6">
+          <img src="./seascoutingemblem_small.png" alt="Sea Scout Ship 4 Logo" className="w-full h-full object-contain" />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-4">{SITE_CONFIG.shipName}</h1>
         <p className="text-xl md:text-2xl mb-2 font-light italic">{SITE_CONFIG.motto}</p>
