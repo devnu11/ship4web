@@ -111,7 +111,7 @@ export const TrainingsPage = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Calendar className="text-ship4-blue" size={20} />
-                    <span className="text-gray-700">4:00 PM - 6:00 PM</span>
+                    <span className="text-gray-700">4:00 PM - 5:00 PM</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Calendar className="text-ship4-blue" size={20} />

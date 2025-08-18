@@ -20,31 +20,31 @@ export const DocumentationPage = () => {
     {
       title: "Sea Scout Manual",
       description: "The official handbook for all Sea Scouts covering advancement, activities, and traditions.",
-      url: "https://www.scouting.org/programs/sea-scouts/resources/",
+      url: "https://seascout.org/wp-content/uploads/2025/02/3323925-Sea-Scout-Manual-PDF-Posted-02182025.pdf",
       icon: BookOpen,
       category: "Essential",
       isPrimary: true
     },
     {
-      title: "Sea Scout Handbook",
+      title: "Youth Training",
       description: "Comprehensive guide to seamanship, leadership, and outdoor adventures on the water.",
-      url: "https://www.scoutshop.org/sea-scout-handbook-620573.html",
+      url: "https://seascout.org/youth-training-and-education/",
       icon: Anchor,
       category: "Essential",
       isPrimary: true
     },
     {
-      title: "Boating Safety Course",
-      description: "Required safety certification for all Sea Scouts participating in water activities.",
-      url: "https://www.uscgboating.org/recreational-boaters/boating-safety-course.php",
+      title: "Texas Boating Safety Course",
+      description: "Required safety certification for all Sea Scouts and Scouters in command of a vessel.",
+      url: "https://tpwd.texas.gov/education/boater-education",
       icon: FileText,
       category: "Safety",
       isPrimary: false
     },
     {
-      title: "Sea Scout Advancement Tracking",
-      description: "Online platform to track progress through Sea Scout ranks and specialties.",
-      url: "https://www.scouting.org/programs/sea-scouts/advancement/",
+      title: "Sea Scout Advancement Requirements",
+      description: "Summary of the Sea Scout advancement requirements.",
+      url: "https://seascout.org/wp-content/uploads/2024/09/2024-Sea-Scout-Advancement47.pdf",
       icon: Star,
       category: "Advancement",
       isPrimary: false
@@ -61,9 +61,9 @@ export const DocumentationPage = () => {
       isPrimary: true
     },
     {
-      title: "Ship Charter Organization Kit",
+      title: "New Ship Organization Kit",
       description: "Forms, requirements, and procedures for officially chartering your ship.",
-      url: "https://www.scouting.org/programs/sea-scouts/local-council-support/",
+      url: "https://seascout.org/new-ship-organization-kit//",
       icon: FileText,
       category: "Administrative",
       isPrimary: true
@@ -165,7 +165,7 @@ export const DocumentationPage = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Documentation & Resources</h1>
           <p className="text-xl md:text-2xl mb-8">Essential guides for new Sea Scouts and ship formation</p>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 inline-block">
-            <p className="text-lg">🎉 Welcome to Ship 4 - Just formed this week!</p>
+            <p className="text-lg">🎉 Welcome to Ship 4 🎉</p>
           </div>
         </div>
       </section>

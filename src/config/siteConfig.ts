@@ -12,8 +12,8 @@ export const SITE_CONFIG = {
   meetingLocation: "Patriots Hall, US 290, Dripping Springs, TX",
   
   // Contact Information
-  email: "ship4@forevans.com", // TODO: Replace with actual email
-  phone: "(201) 743-8267", // TODO: Replace with actual phone
+  email: "skipper@ship4.org",
+  phone: "(201) 74-EVANS",
   
   // Related Organizations
   brotherTroop: {
