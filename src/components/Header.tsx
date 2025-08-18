@@ -15,9 +15,9 @@ export const Header = ({ isScrolled }: HeaderProps) => {
   return (
   <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
     isScrolled ? 'bg-white shadow-lg' : 'bg-white/90 backdrop-blur-sm'
-  }`}>
-    <div className="container mx-auto px-4 py-3">
-      <div className="flex items-center justify-between">
+  }`} style={{ height: 'var(--header-height)' }}>
+    <div className="container mx-auto px-4 h-full flex items-center">
+      <div className="flex items-center justify-between w-full">
         <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
           {/* Ship Burgee Logo */}
           <img src="./burgee.svg" alt="Sea Scout Ship 4 Burgee" className="w-12 h-12" />

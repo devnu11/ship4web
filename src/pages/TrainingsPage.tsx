@@ -48,7 +48,7 @@ export const TrainingsPage = () => {
       <Header isScrolled={isScrolled} />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-br from-ship4-blue to-blue-700">
+      <section className="relative page-hero pb-16 bg-gradient-to-br from-ship4-blue to-blue-700">
         <div className="container mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Training Programs</h1>
           <p className="text-xl md:text-2xl mb-8">Develop seamanship skills and leadership through comprehensive training</p>
