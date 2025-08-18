@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HomePage } from '../pages/HomePage';
 import { TrainingsPage } from '../pages/TrainingsPage';
+import { DocumentationPage } from '../pages/DocumentationPage';
 
 // Component to handle scroll behavior on route changes
 const ScrollToTop = () => {
@@ -47,6 +48,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/trainings" element={<TrainingsPage />} />
+        <Route path="/documentation" element={<DocumentationPage />} />
       </Routes>
     </Router>
   );

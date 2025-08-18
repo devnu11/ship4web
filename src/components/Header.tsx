@@ -44,6 +44,7 @@ export const Header = ({ isScrolled }: HeaderProps) => {
               <Link to="/#events" className="text-gray-700 hover:text-ship4-blue transition-colors">Events</Link>
             )}
             <Link to="/trainings" className="text-gray-700 hover:text-ship4-blue transition-colors">Trainings</Link>
+            <Link to="/documentation" className="text-gray-700 hover:text-ship4-blue transition-colors">Documentation</Link>
             {isHomePage ? (
               <a href="#gallery" className="text-gray-700 hover:text-ship4-blue transition-colors">Gallery</a>
             ) : (
@@ -132,6 +133,13 @@ export const Header = ({ isScrolled }: HeaderProps) => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Trainings
+            </Link>
+            <Link 
+              to="/documentation" 
+              className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Documentation
             </Link>
             {isHomePage ? (
               <a 
