@@ -1,12 +1,31 @@
-import { useState, useEffect } from 'react';
-import { Header } from './Header';
-import { HeroSection } from './HeroSection';
-import { AboutSection } from './AboutSection';
-import { MeetingsSection } from './MeetingsSection';
-import { EventsSection } from './EventsSection';
-import { GallerySection } from './GallerySection';
-import { ContactSection } from './ContactSection';
-import { Footer } from './Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { HomePage } from '../pages/HomePage';
+import { TrainingsPage } from '../pages/TrainingsPage';
+
+// Component to handle scroll behavior on route changes
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if we're navigating to a hash anchor on the home page
+    if (location.pathname === '/' && location.hash) {
+      // Small delay to ensure the page is rendered
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // For regular page navigation, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
+
+  return null;
+};
 
 /**
  * Main App Component for Sea Scout Ship 4 Website
@@ -19,31 +38,16 @@ import { Footer } from './Footer';
  * - Modular component structure
  * - Accessible design with proper ARIA labels
  * - SEO-optimized structure
+ * - Multi-page routing for additional content
  */
 export const App = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Header isScrolled={isScrolled} />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <MeetingsSection />
-        <EventsSection />
-        <GallerySection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/trainings" element={<TrainingsPage />} />
+      </Routes>
+    </Router>
   );
 };
