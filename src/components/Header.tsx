@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
+import { navigationItems, type NavigationItem } from '../data';
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -11,6 +12,28 @@ export const Header = ({ isScrolled }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  const renderNavItem = (item: NavigationItem, isMobile = false) => {
+    const className = isMobile ? 'nav-link-mobile' : 'nav-link';
+    const onClick = isMobile ? () => setIsMobileMenuOpen(false) : undefined;
+
+    // If it's a hash link and we're on the home page, use anchor tag
+    if (item.path.startsWith('#') && isHomePage) {
+      return (
+        <a key={item.label} href={item.path} className={className} onClick={onClick}>
+          {item.label}
+        </a>
+      );
+    }
+    
+    // Otherwise use React Router Link with appropriate path
+    const linkPath = item.path.startsWith('#') ? `/${item.path}` : item.path;
+    return (
+      <Link key={item.label} to={linkPath} className={className} onClick={onClick}>
+        {item.label}
+      </Link>
+    );
+  };
 
   return (
   <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -28,33 +51,7 @@ export const Header = ({ isScrolled }: HeaderProps) => {
         </Link>
         <div className="flex items-center">
           <nav className="hidden md:flex space-x-6">
-            {isHomePage ? (
-              <a href="#about" className="nav-link">About</a>
-            ) : (
-              <Link to="/#about" className="nav-link">About</Link>
-            )}
-            {isHomePage ? (
-              <a href="#meetings" className="nav-link">Meetings</a>
-            ) : (
-              <Link to="/#meetings" className="nav-link">Meetings</Link>
-            )}
-            {isHomePage ? (
-              <a href="#events" className="nav-link">Events</a>
-            ) : (
-              <Link to="/#events" className="nav-link">Events</Link>
-            )}
-            <Link to="/trainings" className="nav-link">Trainings</Link>
-            <Link to="/documentation" className="nav-link">Documentation</Link>
-            {isHomePage ? (
-              <a href="#gallery" className="nav-link">Gallery</a>
-            ) : (
-              <Link to="/#gallery" className="nav-link">Gallery</Link>
-            )}
-            {isHomePage ? (
-              <a href="#contact" className="nav-link">Contact</a>
-            ) : (
-              <Link to="/#contact" className="nav-link">Contact</Link>
-            )}
+            {navigationItems.map(item => renderNavItem(item))}
           </nav>
           
           {/* Mobile menu button */}
@@ -76,105 +73,7 @@ export const Header = ({ isScrolled }: HeaderProps) => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t shadow-lg">
           <nav className="px-4 py-2 space-y-1">
-            {isHomePage ? (
-              <a 
-                href="#about" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </a>
-            ) : (
-              <Link 
-                to="/#about" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-            )}
-            {isHomePage ? (
-              <a 
-                href="#meetings" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Meetings
-              </a>
-            ) : (
-              <Link 
-                to="/#meetings" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Meetings
-              </Link>
-            )}
-            {isHomePage ? (
-              <a 
-                href="#events" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Events
-              </a>
-            ) : (
-              <Link 
-                to="/#events" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Events
-              </Link>
-            )}
-            <Link 
-              to="/trainings" 
-              className="nav-link-mobile"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Trainings
-            </Link>
-            <Link 
-              to="/documentation" 
-              className="nav-link-mobile"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Documentation
-            </Link>
-            {isHomePage ? (
-              <a 
-                href="#gallery" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Gallery
-              </a>
-            ) : (
-              <Link 
-                to="/#gallery" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Gallery
-              </Link>
-            )}
-            {isHomePage ? (
-              <a 
-                href="#contact" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
-            ) : (
-              <Link 
-                to="/#contact" 
-                className="nav-link-mobile"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            )}
+            {navigationItems.map(item => renderNavItem(item, true))}
           </nav>
         </div>
       )}
