@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { HomePage } from '../pages/HomePage';
 import { TrainingsPage } from '../pages/TrainingsPage';
 import { DocumentationPage } from '../pages/DocumentationPage';
+import { SEO } from './SEO';
+import { generateOrganizationSchema, generateWebsiteSchema } from '../utils/structuredData';
 
 // Component to handle scroll behavior on route changes
 const ScrollToTop = () => {
@@ -43,13 +46,21 @@ const ScrollToTop = () => {
  */
 export const App = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/trainings" element={<TrainingsPage />} />
-        <Route path="/documentation" element={<DocumentationPage />} />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <SEO 
+          structuredData={[
+            generateOrganizationSchema(),
+            generateWebsiteSchema()
+          ]}
+        />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/trainings" element={<TrainingsPage />} />
+          <Route path="/documentation" element={<DocumentationPage />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 };
