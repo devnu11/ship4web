@@ -5,7 +5,11 @@ import { MeetingsSection } from '../MeetingsSection'
 // Mock SITE_CONFIG
 vi.mock('../../config/siteConfig', () => ({
   SITE_CONFIG: {
-    meetingTime: 'Second Sunday at 4:00 PM'
+    meetingTime: 'Second Sunday at 4:00 PM',
+    meetingVenue: 'Patriots Hall',
+    meetingAddress: 'US 290',
+    city: 'Dripping Springs',
+    state: 'TX'
   }
 }))
 

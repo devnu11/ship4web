@@ -1,4 +1,5 @@
 import type { Event } from '../types';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 export const upcomingEvents: Event[] = [
   {
@@ -6,7 +7,7 @@ export const upcomingEvents: Event[] = [
     title: "First Meeting",
     date: "2025-08-24",
     time: "4:00 PM",
-    location: "Patriots Hall",
+    location: SITE_CONFIG.meetingVenue,
     description: "First formal meeting of Ship 4."
   },
   {

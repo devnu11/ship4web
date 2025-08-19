@@ -5,6 +5,7 @@ import { ContactSection } from '../ContactSection'
 // Mock SITE_CONFIG
 vi.mock('../../config/siteConfig', () => ({
   SITE_CONFIG: {
+    shipName: 'Sea Scout Ship 4',
     email: 'info@ship4.example.com',
     phone: '(555) 123-4567',
     meetingLocation: 'Patriots Hall, Dripping Springs, TX',

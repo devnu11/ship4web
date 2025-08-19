@@ -11,6 +11,12 @@ export const SITE_CONFIG = {
   meetingTime: "Sunday 4:00 PM",
   meetingLocation: "Patriots Hall, US 290, Dripping Springs, TX",
   
+  // Location Components
+  meetingVenue: "Patriots Hall",
+  meetingAddress: "US 290",
+  city: "Dripping Springs",
+  state: "TX",
+  
   // Contact Information
   email: "skipper@ship4.org",
   phone: "(201) 74-EVANS",

@@ -1,6 +1,13 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { upcomingEvents } from '../events'
 import type { Event } from '../../types'
+
+// Mock SITE_CONFIG
+vi.mock('../../config/siteConfig', () => ({
+  SITE_CONFIG: {
+    meetingVenue: 'Patriots Hall'
+  }
+}))
 
 describe('Upcoming Events', () => {
   it('should be an array', () => {

@@ -51,7 +51,7 @@ export const ContactSection = () => (
       
       <div className="text-center mt-12">
         <a 
-          href={`mailto:${SITE_CONFIG.email}?subject=Interested in Sea Scout Ship 4`}
+          href={`mailto:${SITE_CONFIG.email}?subject=Interested in ${SITE_CONFIG.shipName}`}
           className="btn-cta"
         >
           Contact Us Today

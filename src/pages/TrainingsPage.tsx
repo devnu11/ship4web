@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Calendar } from 'lucide-react';
 import { trainingPrograms } from '../data';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 export const TrainingsPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -90,7 +91,7 @@ export const TrainingsPage = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Calendar className="text-ship4-blue" size={20} />
-                    <span className="text-gray-700">Patriots Hall, Dripping Springs</span>
+                    <span className="text-gray-700">{SITE_CONFIG.meetingVenue}, {SITE_CONFIG.city}</span>
                   </div>
                 </div>
               </div>

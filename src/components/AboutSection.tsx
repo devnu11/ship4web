@@ -1,10 +1,11 @@
 import { Users, Anchor, Calendar } from 'lucide-react';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 export const AboutSection = () => (
   <section id="about" className="page-section bg-white">
     <div className="container-content">
       <div className="section-header">
-        <h2 className="heading-section">About Sea Scout Ship 4</h2>
+        <h2 className="heading-section">About {SITE_CONFIG.shipName}</h2>
         <p className="text-section-subtitle">
           Discover the adventure of Sea Scouting with Ship 4, where young mariners learn seamanship, 
           leadership, and character while exploring the waters of Central Texas.

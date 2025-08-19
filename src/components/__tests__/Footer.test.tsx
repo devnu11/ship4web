@@ -7,6 +7,7 @@ vi.mock('../../config/siteConfig', () => ({
   SITE_CONFIG: {
     shipName: 'Sea Scout Ship 4',
     motto: 'Following Seas',
+    city: 'Dripping Springs',
     charterOrg: 'American Legion Post 135'
   }
 }))

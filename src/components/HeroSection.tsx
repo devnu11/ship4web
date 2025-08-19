@@ -9,7 +9,7 @@ export const HeroSection = () => (
       <div className="mb-8">
         {/* Ship Logo */}
         <div className="w-80 h-80 mx-auto mb-6 bg-ship4-blue rounded-full flex items-center justify-center p-6">
-          <img src="./seascoutingemblem_small.png" alt="Sea Scout Ship 4 Logo" className="w-full h-full object-contain" />
+          <img src="./seascoutingemblem_small.png" alt={`${SITE_CONFIG.shipName} Logo`} className="w-full h-full object-contain" />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-4">{SITE_CONFIG.shipName}</h1>
         <p className="text-xl md:text-2xl mb-2 font-light italic">{SITE_CONFIG.motto}</p>
@@ -23,7 +23,7 @@ export const HeroSection = () => (
         </div>
         <div className="flex items-center space-x-2">
           <MapPin size={20} />
-          <span>Patriots Hall, US 290</span>
+          <span>{SITE_CONFIG.meetingVenue}, {SITE_CONFIG.meetingAddress}</span>
         </div>
       </div>
       

@@ -8,7 +8,9 @@ vi.mock('../../config/siteConfig', () => ({
     shipName: 'Sea Scout Ship 4',
     motto: 'Following Seas',
     location: 'Dripping Springs, Texas',
-    meetingTime: 'Second Sunday at 4:00 PM'
+    meetingTime: 'Second Sunday at 4:00 PM',
+    meetingVenue: 'Patriots Hall',
+    meetingAddress: 'US 290'
   }
 }))
 

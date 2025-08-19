@@ -31,8 +31,8 @@ export const MeetingsSection = () => (
                   <MapPin className="mr-2 text-ship4-blue" size={20} />
                   Where
                 </h4>
-                <p className="text-gray-700 mb-2">Patriots Hall</p>
-                <p className="text-sm text-gray-600">US 290, Dripping Springs, TX</p>
+                <p className="text-gray-700 mb-2">{SITE_CONFIG.meetingVenue}</p>
+                <p className="text-sm text-gray-600">{SITE_CONFIG.meetingAddress}, {SITE_CONFIG.city}, {SITE_CONFIG.state}</p>
               </div>
             </div>
             
