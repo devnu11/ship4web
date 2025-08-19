@@ -1,3 +1,7 @@
+/**
+ * Utilities for generating JSON-LD structured data
+ * Used for SEO optimization and rich snippets in search results
+ */
 import { SITE_CONFIG } from '../config/siteConfig';
 import type { Event } from '../types';
 
