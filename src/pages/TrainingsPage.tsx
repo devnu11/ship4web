@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { BookOpen, Anchor, Users, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
+import { trainingPrograms } from '../data';
 
 export const TrainingsPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,32 +17,6 @@ export const TrainingsPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const trainingPrograms = [
-    {
-      title: "Basic Seamanship",
-      description: "Essential skills for all Sea Scouts including knot tying, line handling, and boat safety.",
-      icon: Anchor,
-      topics: ["Knots and Splices", "Line Handling", "Boat Safety", "Navigation Basics"]
-    },
-    {
-      title: "Leadership Development", 
-      description: "Build leadership skills through hands-on maritime experiences and team challenges.",
-      icon: Users,
-      topics: ["Team Leadership", "Communication", "Decision Making", "Conflict Resolution"]
-    },
-    {
-      title: "Advanced Navigation",
-      description: "Chart reading, compass work, and modern GPS navigation techniques.",
-      icon: BookOpen,
-      topics: ["Chart Reading", "Compass Navigation", "GPS Systems", "Weather Patterns"]
-    },
-    {
-      title: "Sailing Certification",
-      description: "Comprehensive sailing program leading to US Sailing certification.",
-      icon: Calendar,
-      topics: ["Sailing Theory", "Boat Handling", "Safety Procedures", "Certification Prep"]
-    }
-  ];
 
   return (
     <div className="min-h-screen">

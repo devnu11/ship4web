@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import type { Event } from '../types';
+import { upcomingEvents } from '../data';
 
 export const EventsSection = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -9,75 +10,22 @@ export const EventsSection = () => {
   // TODO: Implement Google Calendar API integration
   useEffect(() => {
     // Placeholder for Google Calendar integration
+    // When implemented, replace upcomingEvents with actual Google Calendar data
     // fetchGoogleCalendarEvents(SITE_CONFIG.googleCalendarId);
     
-    // Mock data for demonstration
+    // Load current Ship 4 events
     setTimeout(() => {
-      setEvents([
-        {
-          id: 1,
-          title: "First Meeting",
-          date: "2025-08-24",
-          time: "4:00 PM",
-          location: "Patriots Hall",
-          description: "First formal meeting of Ship 4."
-        },
-        {
-          id: 2,
-          title: "Quarter Deck Training",
-          date: "2025-09-1",
-          time: "1:30 PM",
-          location: "Zoom",
-          description: "Skipper Palm teaches leadership, planning and communication.",
-          url: "mailto:dallas@rliv.net?subject=Quarter Deck Training"
-        },
-        {
-          id: 3,
-          title: "CAC High Adventure Day",
-          date: "2025-09-13",
-          time: "8:30 AM",
-          location: "Lost Pines",
-          description: "Shooting, swimming and climbing.",
-          url: "https://scoutingevent.com/564-94448"
-        },
-        {
-          id: 4,
-          title: "Sea Scout Minto Rendezvous",
-          date: "2025-09-19 - 2025-09-21",
-          time: "5:00 PM",
-          location: "Camp Strake, SHAC",
-          description: "Regional Sea Scout rendezvous. Compete with other ships in sailing, seamanship, and leadership challenges.",
-          url: "https://shacbsa.org/minto-rendezvous"
-        },
-        {
-          id: 5,
-          title: "EXTERNAL - Saiing Academy - Texas Trails Council",
-          date: "2026 Dates TBD",
-          time: "TBD",
-          location: "Abilene Sailing Assocation, Lake Ft. Phantom Hill, TX",
-          description: "Earn US Sailing Certification. And Sea Scout rank advancement.",
-          url: "https://www.texastrailsbsa.com"
-        },
-        {
-          id: 6,
-          title: "EXTERNAL - Aquatic School - Longhorn Council",
-          date: "2026-07-12 - 2025-07-18",
-          time: "5:00 PM",
-          location: "Worth Ranch, Palo Pinto, TX",
-          description: "Week-long leadership program for Scouts ages 13-17",
-          url: "https://www.aquaticschool.org"
-        }
-      ]);
+      setEvents(upcomingEvents);
       setLoading(false);
     }, 1000);
   }, []);
 
   return (
-    <section id="events" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-          <p className="text-xl text-gray-600">Stay updated with our latest activities and adventures</p>
+    <section id="events" className="page-section bg-white">
+      <div className="container-content">
+        <div className="section-header">
+          <h2 className="heading-section">Upcoming Events</h2>
+          <p className="text-section-subtitle">Stay updated with our latest activities and adventures</p>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -110,7 +58,7 @@ export const EventsSection = () => {
                           href={event.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-4 md:mt-0 bg-ship4-blue text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                          className="mt-4 md:mt-0 btn-small"
                         >
                           <span>Learn More</span>
                           <ExternalLink size={16} />
