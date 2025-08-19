@@ -57,7 +57,7 @@ describe('HeroSection Component', () => {
     render(<HeroSection />)
     const logo = screen.getByAltText('Sea Scout Ship 4 Logo')
     expect(logo).toBeInTheDocument()
-    expect(logo).toHaveAttribute('src', './seascoutingemblem_small.png')
+    expect(logo).toHaveAttribute('src', '/seascoutingemblem_small.png')
   })
 
   it('has Clock and MapPin icons', () => {

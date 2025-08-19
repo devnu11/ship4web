@@ -48,9 +48,10 @@ describe('Header Component', () => {
     expect(screen.getByText('About')).toBeInTheDocument()
     expect(screen.getByText('Meetings')).toBeInTheDocument()
     expect(screen.getByText('Events')).toBeInTheDocument()
-    expect(screen.getByText('Trainings')).toBeInTheDocument()
-    expect(screen.getByText('Documentation')).toBeInTheDocument()
-    expect(screen.getByText('Gallery')).toBeInTheDocument()
+    expect(screen.getByText('Learning')).toBeInTheDocument()
+    expect(screen.getByText('Links')).toBeInTheDocument()
+    expect(screen.getByText('Pics')).toBeInTheDocument()
+    expect(screen.getByText('Merch')).toBeInTheDocument()
     expect(screen.getByText('Contact')).toBeInTheDocument()
   })
 
@@ -96,7 +97,7 @@ describe('Header Component', () => {
     renderHeader()
     const logo = screen.getByAltText('Sea Scout Ship 4 Burgee')
     expect(logo).toBeInTheDocument()
-    expect(logo).toHaveAttribute('src', './burgee.svg')
+    expect(logo).toHaveAttribute('src', '/burgee.svg')
   })
 
   it('closes mobile menu when mobile link is clicked', () => {

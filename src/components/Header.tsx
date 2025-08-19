@@ -1,6 +1,6 @@
 import { useState, useCallback, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Anchor } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { navigationItems, type NavigationItem } from '../data';
 
@@ -51,7 +51,7 @@ export const Header = memo(({ isScrolled }: HeaderProps) => {
       <div className="flex items-center justify-between w-full">
         <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
           {/* Ship Burgee Logo */}
-          <img src="./burgee.svg" alt={`${SITE_CONFIG.shipName} Burgee`} className="w-12 h-12" />
+          <img src="/burgee.svg" alt={`${SITE_CONFIG.shipName} Burgee`} className="w-12 h-12" />
           <div>
             <h1 className="text-xl font-bold text-gray-900">{SITE_CONFIG.shipName}</h1>
             <p className="text-sm text-gray-600 italic">{SITE_CONFIG.motto}</p>

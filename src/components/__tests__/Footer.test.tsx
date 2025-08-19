@@ -46,13 +46,13 @@ describe('Footer Component', () => {
     render(<Footer />)
     const logo = screen.getByAltText('Sea Scout Ship 4 Logo')
     expect(logo).toBeInTheDocument()
-    expect(logo).toHaveAttribute('src', './logo transparent.svg')
+    expect(logo).toHaveAttribute('src', '/logo transparent.svg')
   })
 
   it('displays logo with proper styling', () => {
     render(<Footer />)
     const logoContainer = screen.getByAltText('Sea Scout Ship 4 Logo').closest('div')
-    expect(logoContainer).toHaveClass('w-48', 'h-48', 'bg-ship4-blue', 'rounded-full')
+    expect(logoContainer).toHaveClass('w-48', 'h-48', 'bg-ship-navy', 'rounded-full')
   })
 
   it('has centered content layout', () => {

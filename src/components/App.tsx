@@ -6,6 +6,13 @@ import { HomePage } from '../pages/HomePage';
 import { TrainingsPage } from '../pages/TrainingsPage';
 import { DocumentationPage } from '../pages/DocumentationPage';
 import { ChandleryPage } from '../pages/ChandleryPage';
+import { TemplatesPage } from '../pages/TemplatesPage';
+import { PlacardsPage } from '../pages/PlacardsPage';
+import { FloatPlanPage } from '../pages/templates/FloatPlanPage';
+import { VesselSafetyCheckPage } from '../pages/templates/VesselSafetyCheckPage';
+import { SafetyBriefingPage } from '../pages/placards/SafetyBriefingPage';
+import { MaydayProcedurePage } from '../pages/placards/MaydayProcedurePage';
+import { PreDockingCheckPage } from '../pages/placards/PreDockingCheckPage';
 import { SEO } from './SEO';
 import { generateOrganizationSchema, generateWebsiteSchema } from '../utils/structuredData';
 
@@ -61,6 +68,13 @@ export const App = () => {
           <Route path="/trainings" element={<TrainingsPage />} />
           <Route path="/documentation" element={<DocumentationPage />} />
           <Route path="/chandlery" element={<ChandleryPage />} />
+          <Route path="/templates" element={<TemplatesPage />} />
+          <Route path="/placards" element={<PlacardsPage />} />
+          <Route path="/templates/float-plan" element={<FloatPlanPage />} />
+          <Route path="/templates/vessel-safety-check" element={<VesselSafetyCheckPage />} />
+          <Route path="/placards/safety-briefing" element={<SafetyBriefingPage />} />
+          <Route path="/placards/mayday-procedure" element={<MaydayProcedurePage />} />
+          <Route path="/placards/pre-docking-check" element={<PreDockingCheckPage />} />
         </Routes>
       </Router>
     </HelmetProvider>
