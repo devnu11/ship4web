@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
-import { SITE_CONFIG } from '../config/siteConfig';
 import type { Event } from '../types';
 
 export const EventsSection = () => {

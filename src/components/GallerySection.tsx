@@ -1,9 +1,3 @@
-interface GalleryImage {
-  src: string;
-  title: string;
-  alt: string;
-}
-
 export const GallerySection = () => {
   // Ship 4 photo gallery
   const galleryImages = [

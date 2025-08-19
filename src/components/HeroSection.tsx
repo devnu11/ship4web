@@ -2,10 +2,10 @@ import { Clock, MapPin } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 export const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-ship4-blue via-blue-700 to-ship4-red">
+  <section className="relative min-h-screen flex items-center justify-center bg-hero-gradient-complex">
     {/* TODO: Replace with actual hero image from Seabase */}
     <div className="absolute inset-0 bg-black/30"></div>
-    <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+    <div className="relative z-10 container-content text-center text-white max-w-4xl">
       <div className="mb-8">
         {/* Ship Logo */}
         <div className="w-80 h-80 mx-auto mb-6 bg-ship4-blue rounded-full flex items-center justify-center p-6">
@@ -29,7 +29,7 @@ export const HeroSection = () => (
       
       <a 
         href="#contact" 
-        className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors inline-block"
+        className="btn-cta"
       >
         Join Our Crew
       </a>

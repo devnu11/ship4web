@@ -2,16 +2,16 @@ import { Clock, MapPin } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 export const MeetingsSection = () => (
-  <section id="meetings" className="py-20 bg-gray-50">
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Meeting Information</h2>
+  <section id="meetings" className="page-section-alt">
+    <div className="container-content">
+      <div className="section-header">
+        <h2 className="heading-section">Meeting Information</h2>
       </div>
       
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="card overflow-hidden">
           <div className="bg-ship4-blue text-white p-6">
-            <h3 className="text-2xl font-bold mb-2">Monthly Meetings</h3>
+            <h3 className="heading-subsection text-white mb-2">Monthly Meetings</h3>
             <p className="opacity-90">Join us for fun, fellowship and following seas</p>
           </div>
           

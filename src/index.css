@@ -4,12 +4,164 @@
 
 @layer base {
   :root {
+    /* Layout */
     --header-height: 5rem; /* 80px */
+    
+    /* Colors */
+    --color-ship4-blue: #1e40af;
+    --color-ship4-blue-hover: #1d4ed8;
+    --color-ship4-blue-dark: #1e3a8a;
+    --color-ship4-red: #dc2626;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-900: #111827;
+    
+    /* Spacing */
+    --spacing-section: 5rem; /* 80px - py-20 */
+    --spacing-section-sm: 4rem; /* 64px - py-16 */
+    
+    /* Shadows */
+    --shadow-card: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   }
 }
 
 @layer components {
+  /* Layout Components */
   .page-hero {
-    padding-top: calc(var(--header-height) + 3rem); /* header height + 48px spacing */
+    @apply relative pb-16;
+    @apply bg-gradient-to-br from-ship4-blue to-blue-700;
+    padding-top: calc(var(--header-height) + 3rem);
+  }
+  
+  .page-section {
+    @apply py-20;
+  }
+  
+  .page-section-alt {
+    @apply py-20 bg-gray-50;
+  }
+  
+  .container-content {
+    @apply container mx-auto px-4;
+  }
+  
+  /* Typography */
+  .heading-hero {
+    @apply text-4xl md:text-6xl font-bold mb-4 text-white;
+  }
+  
+  .heading-section {
+    @apply text-3xl font-bold text-gray-900 mb-4;
+  }
+  
+  .heading-card {
+    @apply text-xl font-bold text-gray-900 mb-2;
+  }
+  
+  .heading-subsection {
+    @apply text-2xl font-bold text-gray-900 mb-6;
+  }
+  
+  .text-hero-subtitle {
+    @apply text-xl md:text-2xl mb-8 text-white;
+  }
+  
+  .text-section-subtitle {
+    @apply text-xl text-gray-600 max-w-3xl mx-auto;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply bg-ship4-blue text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center space-x-2 font-semibold;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-ship4-blue px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors inline-block font-semibold;
+  }
+  
+  .btn-small {
+    @apply bg-ship4-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center space-x-2;
+  }
+
+  .btn-cta {
+    @apply bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors inline-block;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl p-6 transition-shadow;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .card-primary {
+    @apply card ring-2 ring-ship4-blue;
+  }
+  
+  .card-icon {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0;
+  }
+  
+  .card-icon-primary {
+    @apply card-icon bg-ship4-blue text-white;
+  }
+  
+  .card-icon-secondary {
+    @apply card-icon bg-gray-100 text-gray-600;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-gray-700 hover:text-ship4-blue transition-colors;
+  }
+  
+  .nav-link-mobile {
+    @apply block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded transition-colors;
+  }
+  
+  /* Sections with consistent styling */
+  .section-header {
+    @apply text-center mb-16;
+  }
+  
+  .grid-cards {
+    @apply grid md:grid-cols-2 gap-8 max-w-6xl mx-auto;
+  }
+  
+  .grid-cards-3 {
+    @apply grid md:grid-cols-3 gap-8 max-w-4xl mx-auto;
+  }
+  
+  /* Gradients */
+  .bg-hero-gradient {
+    @apply bg-gradient-to-br from-ship4-blue to-blue-700;
+  }
+  
+  .bg-hero-gradient-complex {
+    @apply bg-gradient-to-br from-ship4-blue via-blue-700 to-ship4-red;
+  }
+  
+  /* Category badges */
+  .badge-primary {
+    @apply inline-block px-2 py-1 text-xs font-semibold rounded-full bg-ship4-blue text-white mb-2;
+  }
+  
+  .badge-secondary {
+    @apply inline-block px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-600 mb-2;
+  }
+  
+  /* Feature icons */
+  .feature-icon {
+    @apply w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4;
+  }
+  
+  .feature-title {
+    @apply text-xl font-semibold mb-2;
   }
 }

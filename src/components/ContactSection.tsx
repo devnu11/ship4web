@@ -2,16 +2,16 @@ import { Mail, Phone, MapPin, ExternalLink, Users } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 export const ContactSection = () => (
-  <section id="contact" className="py-20 bg-white">
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Connected</h2>
-        <p className="text-xl text-gray-600">Ready to join our crew or have questions?</p>
+  <section id="contact" className="page-section bg-white">
+    <div className="container-content">
+      <div className="section-header">
+        <h2 className="heading-section">Get Connected</h2>
+        <p className="text-section-subtitle">Ready to join our crew or have questions?</p>
       </div>
       
-      <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+      <div className="grid-cards">
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+          <h3 className="heading-subsection">Contact Information</h3>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Mail className="text-ship4-blue" size={20} />
@@ -29,7 +29,7 @@ export const ContactSection = () => (
         </div>
         
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Organizations</h3>
+          <h3 className="heading-subsection">Related Organizations</h3>
           <div className="space-y-4">
             <a href={SITE_CONFIG.brotherTroop.url} target="_blank" rel="noopener noreferrer" 
                className="flex items-center space-x-3 text-ship4-blue hover:text-blue-600 transition-colors">
@@ -52,7 +52,7 @@ export const ContactSection = () => (
       <div className="text-center mt-12">
         <a 
           href={`mailto:${SITE_CONFIG.email}?subject=Interested in Sea Scout Ship 4`}
-          className="bg-ship4-red hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-colors inline-block"
+          className="btn-cta"
         >
           Contact Us Today
         </a>

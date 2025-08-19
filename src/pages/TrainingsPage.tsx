@@ -48,33 +48,33 @@ export const TrainingsPage = () => {
       <Header isScrolled={isScrolled} />
       
       {/* Hero Section */}
-      <section className="relative page-hero pb-16 bg-gradient-to-br from-ship4-blue to-blue-700">
-        <div className="container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Training Programs</h1>
-          <p className="text-xl md:text-2xl mb-8">Develop seamanship skills and leadership through comprehensive training</p>
+      <section className="page-hero">
+        <div className="container-content text-center">
+          <h1 className="heading-hero">Training Programs</h1>
+          <p className="text-hero-subtitle">Develop seamanship skills and leadership through comprehensive training</p>
         </div>
       </section>
 
       {/* Training Programs */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Training Programs</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section className="page-section bg-white">
+        <div className="container-content">
+          <div className="section-header">
+            <h2 className="heading-section">Our Training Programs</h2>
+            <p className="text-section-subtitle">
               Ship 4 offers comprehensive training programs designed to develop maritime skills, 
               leadership abilities, and character in young mariners.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid-cards">
             {trainingPrograms.map((program, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <div key={index} className="card bg-gray-50">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-ship4-blue rounded-lg flex items-center justify-center flex-shrink-0">
-                    <program.icon className="text-white" size={24} />
+                  <div className="card-icon-primary">
+                    <program.icon size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{program.title}</h3>
+                    <h3 className="heading-card">{program.title}</h3>
                     <p className="text-gray-600 mb-4">{program.description}</p>
                     <div className="space-y-1">
                       <h4 className="font-semibold text-gray-900">Topics Covered:</h4>
@@ -93,17 +93,17 @@ export const TrainingsPage = () => {
       </section>
 
       {/* Training Schedule */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Training Schedule</h2>
-            <p className="text-xl text-gray-600">Regular training sessions to build your maritime skills</p>
+      <section className="page-section-alt">
+        <div className="container-content">
+          <div className="section-header">
+            <h2 className="heading-section">Training Schedule</h2>
+            <p className="text-section-subtitle">Regular training sessions to build your maritime skills</p>
           </div>
           
-          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+          <div className="max-w-4xl mx-auto card">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Monthly Training</h3>
+                <h3 className="heading-card">Monthly Training</h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Calendar className="text-ship4-blue" size={20} />
@@ -121,7 +121,7 @@ export const TrainingsPage = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Special Training Events</h3>
+                <h3 className="heading-card">Special Training Events</h3>
                 <div className="space-y-2">
                   <p className="text-gray-700">• Weekend sailing workshops</p>
                   <p className="text-gray-700">• Leadership development retreats</p>
@@ -134,7 +134,7 @@ export const TrainingsPage = () => {
             <div className="mt-8 pt-8 border-t text-center">
               <Link 
                 to="/#contact" 
-                className="bg-ship4-blue text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
+                className="btn-primary"
               >
                 Join Our Training Program
               </Link>
