@@ -12,7 +12,7 @@ export const upcomingEvents: Event[] = [
   {
     id: 2,
     title: "Quarter Deck Training",
-    date: "2025-09-1",
+    date: "2025-09-01",
     time: "1:30 PM",
     location: "Zoom",
     description: "Skipper Palm teaches leadership, planning and communication.",

@@ -106,8 +106,11 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 **Testing Requirements:**
 - Write unit tests for all new code
-- Maintain 90%+ code coverage
+- Maintain 90%+ code coverage, with a 100% pass rate
 - Test both happy paths and edge cases
+- Do negative testing as well.  Meeting coverage alone is not enough. 
+- Any coverage gaps should be examined for other potential testing gaps.  
+- Touch testing to achieve coverage is worse than not testing at all.
 - Mock external dependencies
 - Use descriptive test names that explain behavior
 
@@ -122,7 +125,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 **Before Committing:**
 - Run `npx tsc --noEmit` to check for TypeScript errors
 - Run `npm run build` to verify production build works
-- Run tests and verify 90%+ coverage is maintained
+- Run tests and verify 90%+ coverage and pass rate is maintained
 - Fix any TypeScript warnings or build errors
 
 **Development Commands:**
@@ -135,5 +138,5 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ## Deployment
 
 - Push to `main` branch on GitHub triggers automatic deployment
-- Always verify TypeScript and build success before pushing
+- All Pre-commit testing and correction must be done.
 - Use `npm run dev` for local development server
