@@ -15,9 +15,9 @@
 
 	<g clip-path="url(#burgeeClip)" >
 		<!-- Diagonal stripes at 64° clipped to burgee -->
-		<g transform="rotate(-64 145 0)">
+		<g transform="rotate(-64 125 0)">
 			<!-- White stripe -->
-			<rect x="0" y="-6" width="300" height="6" fill="white" id="whitestripe"/>
+			<rect x="0" y="-10" width="300" height="20" fill="white" id="whitestripe"/>
 			<!-- Red stripe #C8102E or red or maroon-->
 			<rect x="0" y="0" width="300" height="40" fill="#C81010" id="redstripe"/>
 		</g>
