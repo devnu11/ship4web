@@ -17,19 +17,19 @@ export const navigationItems: NavigationItem[] = [
     path: '#events'
   },
   {
-    label: 'Trainings',
+    label: 'Learning',
     path: '/trainings'
   },
   {
-    label: 'Documentation',
+    label: 'Links',
     path: '/documentation'
   },
   {
-    label: 'Gallery',
+    label: 'Pics',
     path: '#gallery'
   },
   {
-    label: 'Chandlery',
+    label: 'Merch',
     path: '/chandlery'
   },
   {
