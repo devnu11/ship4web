@@ -8,7 +8,7 @@ export const upcomingEvents: Event[] = [
     date: "2025-08-24",
     time: "4:00 PM",
     location: SITE_CONFIG.meetingVenue,
-    description: "First formal meeting of Ship 4."
+    description: `First formal meeting of ${SITE_CONFIG.shipShortName}.`
   },
   {
     id: 2,

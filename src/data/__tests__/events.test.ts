@@ -5,7 +5,8 @@ import type { Event } from '../../types'
 // Mock SITE_CONFIG
 vi.mock('../../config/siteConfig', () => ({
   SITE_CONFIG: {
-    meetingVenue: 'Patriots Hall'
+    meetingVenue: 'Patriots Hall',
+    shipShortName: 'Ship 4'
   }
 }))
 

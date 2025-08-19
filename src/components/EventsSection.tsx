@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import type { Event } from '../types';
 import { upcomingEvents } from '../data';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 export const EventsSection = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -13,7 +14,7 @@ export const EventsSection = () => {
     // When implemented, replace upcomingEvents with actual Google Calendar data
     // fetchGoogleCalendarEvents(SITE_CONFIG.googleCalendarId);
     
-    // Load current Ship 4 events
+    // Load current events
     setTimeout(() => {
       setEvents(upcomingEvents);
       setLoading(false);

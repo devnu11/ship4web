@@ -7,7 +7,7 @@ export const AboutSection = () => (
       <div className="section-header">
         <h2 className="heading-section">About {SITE_CONFIG.shipName}</h2>
         <p className="text-section-subtitle">
-          Discover the adventure of Sea Scouting with Ship 4, where young mariners learn seamanship, 
+          Discover the adventure of Sea Scouting with {SITE_CONFIG.shipShortName}, where young mariners learn seamanship, 
           leadership, and character while exploring the waters of Central Texas.
         </p>
       </div>

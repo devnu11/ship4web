@@ -3,6 +3,12 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { EventsSection } from '../EventsSection'
 
 // Mock the data
+vi.mock('../../config/siteConfig', () => ({
+  SITE_CONFIG: {
+    shipShortName: 'Ship 4'
+  }
+}))
+
 vi.mock('../../data', () => ({
   upcomingEvents: [
     {

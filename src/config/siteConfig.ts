@@ -6,6 +6,7 @@
 export const SITE_CONFIG = {
   // Basic Information
   shipName: "Sea Scout Ship 4",
+  shipShortName: "Ship 4",
   location: "Dripping Springs, TX",
   motto: "Paratus Sum",
   meetingTime: "Sunday 4:00 PM",

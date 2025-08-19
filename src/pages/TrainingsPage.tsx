@@ -37,7 +37,7 @@ export const TrainingsPage = () => {
           <div className="section-header">
             <h2 className="heading-section">Our Training Programs</h2>
             <p className="text-section-subtitle">
-              Ship 4 offers comprehensive training programs designed to develop maritime skills, 
+              {SITE_CONFIG.shipShortName} offers comprehensive training programs designed to develop maritime skills, 
               leadership abilities, and character in young mariners.
             </p>
           </div>

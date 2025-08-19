@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { BookOpen, FileText, Users, ExternalLink } from 'lucide-react';
 import { seaScoutResources, shipFormationResources, additionalResources, type Resource } from '../data';
+import { SITE_CONFIG } from '../config/siteConfig';
 
 export const DocumentationPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +61,7 @@ export const DocumentationPage = () => {
           <h1 className="heading-hero">Documentation & Resources</h1>
           <p className="text-hero-subtitle">Essential guides for new Sea Scouts and ship formation</p>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 inline-block">
-            <p className="text-lg">🎉 Welcome to Ship 4 🎉</p>
+            <p className="text-lg">🎉 Welcome to {SITE_CONFIG.shipShortName} 🎉</p>
           </div>
         </div>
       </section>
@@ -137,7 +138,7 @@ export const DocumentationPage = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <Users className="mx-auto mb-4" size={48} />
               <h3 className="text-xl font-bold mb-2">3. Join Our Ship</h3>
-              <p>Connect with Ship 4 and start your maritime adventure!</p>
+              <p>Connect with {SITE_CONFIG.shipShortName} and start your maritime adventure!</p>
             </div>
           </div>
           <div className="mt-12">
@@ -145,7 +146,7 @@ export const DocumentationPage = () => {
               to="/#contact" 
               className="btn-secondary"
             >
-              Contact Ship 4
+              Contact {SITE_CONFIG.shipShortName}
             </Link>
           </div>
         </div>
