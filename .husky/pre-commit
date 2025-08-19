@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🧪 Running pre-commit tests and coverage checks..."
+
+# Run lint-staged to test only staged files
+npx lint-staged
+
+# Check if any TypeScript files are staged
+if git diff --cached --name-only | grep -E '\.(ts|tsx)$'; then
+  echo "📊 Checking test coverage..."
+  
+  # Run full coverage check to ensure we maintain 90% threshold
+  npm run test:coverage
+  
+  if [ $? -ne 0 ]; then
+    echo "❌ Coverage check failed. Please ensure tests pass and coverage is above 90%."
+    exit 1
+  fi
+  
+  echo "✅ All tests passed and coverage requirements met!"
+else
+  echo "ℹ️  No TypeScript files staged, skipping test coverage check."
+fi
+
+echo "🚀 Pre-commit checks completed successfully!"

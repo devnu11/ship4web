@@ -11,7 +11,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
@@ -30,12 +31,22 @@
     "@vitest/coverage-v8": "^3.2.4",
     "autoprefixer": "^10.4.15",
     "gh-pages": "^6.0.0",
+    "husky": "^9.1.7",
     "jsdom": "^26.1.0",
+    "lint-staged": "^16.1.5",
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vitest": "^3.2.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run test:coverage -- --run --reporter=verbose --changed"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "vitest related --run --reporter=basic"
+    ]
   },
   "homepage": "https://devnu11.github.io/ship4web"
 }

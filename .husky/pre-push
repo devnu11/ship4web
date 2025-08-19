@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚀 Running pre-push validation..."
+
+# Run the complete test suite with coverage
+echo "🧪 Running complete test suite..."
+npm run test:run
+
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Please fix failing tests before pushing."
+  exit 1
+fi
+
+# Run coverage check
+echo "📊 Validating test coverage..."
+npm run test:coverage
+
+if [ $? -ne 0 ]; then
+  echo "❌ Coverage requirements not met. Please ensure coverage is above 90%."
+  exit 1
+fi
+
+# Check build
+echo "🏗️  Validating build..."
+npm run build
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Please fix build errors before pushing."
+  exit 1
+fi
+
+echo "✅ All pre-push checks passed! Ready to push to production."
