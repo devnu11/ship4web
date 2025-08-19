@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { BookOpen, FileText, Users, ExternalLink } from 'lucide-react';
+import { BookOpen, FileText, Users, ExternalLink, Anchor, AlertTriangle, CheckCircle, Mail } from 'lucide-react';
 import { seaScoutResources, shipFormationResources, additionalResources, type Resource } from '../data';
 import { SITE_CONFIG } from '../config/siteConfig';
 
@@ -116,6 +116,131 @@ export const DocumentationPage = () => {
             {additionalResources.map((resource, index) => (
               <ResourceCard key={index} resource={resource} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Maritime Templates & Placards */}
+      <section className="page-section bg-white">
+        <div className="container-content">
+          <div className="section-header">
+            <h2 className="heading-section">Maritime Templates & Safety Placards</h2>
+            <p className="text-section-subtitle">
+              Interactive forms and safety checklists for vessel operations and emergency procedures.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Templates Section */}
+            <div className="bg-blue-50 rounded-lg p-8 border">
+              <div className="flex items-center mb-6">
+                <FileText className="text-ship-navy mr-3" size={32} />
+                <h3 className="text-2xl font-bold text-gray-900">Interactive Templates</h3>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Official maritime forms that can be completed digitally and automatically submitted 
+                to appropriate authorities and emergency contacts.
+              </p>
+              
+              <div className="space-y-4 mb-6">
+                <Link 
+                  to="/templates/float-plan"
+                  className="flex items-center p-3 bg-white rounded-lg border hover:border-ship-navy transition-colors"
+                >
+                  <Anchor className="text-ship-navy mr-3" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Coast Guard Float Plan</div>
+                    <div className="text-sm text-gray-600">Interactive 6-step USCG form</div>
+                  </div>
+                </Link>
+                
+                <Link 
+                  to="/templates/vessel-safety-check"
+                  className="flex items-center p-3 bg-white rounded-lg border hover:border-ship-navy transition-colors"
+                >
+                  <CheckCircle className="text-ship-navy mr-3" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Vessel Safety Check</div>
+                    <div className="text-sm text-gray-600">4-step VSC inspection form</div>
+                  </div>
+                </Link>
+              </div>
+              
+              <Link 
+                to="/templates"
+                className="btn-primary w-full justify-center"
+              >
+                View All Templates
+              </Link>
+            </div>
+
+            {/* Placards Section */}
+            <div className="bg-red-50 rounded-lg p-8 border">
+              <div className="flex items-center mb-6">
+                <AlertTriangle className="text-ship-red mr-3" size={32} />
+                <h3 className="text-2xl font-bold text-gray-900">Safety Placards</h3>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Printable safety procedure checklists and emergency protocols for posting 
+                aboard vessels and reference during operations.
+              </p>
+              
+              <div className="space-y-4 mb-6">
+                <Link 
+                  to="/placards/safety-briefing"
+                  className="flex items-center p-3 bg-white rounded-lg border hover:border-ship-red transition-colors"
+                >
+                  <Users className="text-ship-red mr-3" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Safety Briefing</div>
+                    <div className="text-sm text-gray-600">Pre-departure checklist</div>
+                  </div>
+                </Link>
+                
+                <Link 
+                  to="/placards/mayday-procedure"
+                  className="flex items-center p-3 bg-white rounded-lg border hover:border-ship-red transition-colors"
+                >
+                  <Mail className="text-ship-red mr-3" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Mayday Procedures</div>
+                    <div className="text-sm text-gray-600">Emergency radio calls</div>
+                  </div>
+                </Link>
+                
+                <Link 
+                  to="/placards/pre-docking-check"
+                  className="flex items-center p-3 bg-white rounded-lg border hover:border-ship-red transition-colors"
+                >
+                  <Anchor className="text-ship-red mr-3" size={20} />
+                  <div>
+                    <div className="font-semibold text-gray-900">Pre-Docking Check</div>
+                    <div className="text-sm text-gray-600">Docking safety procedures</div>
+                  </div>
+                </Link>
+              </div>
+              
+              <Link 
+                to="/placards"
+                className="btn-secondary w-full justify-center"
+              >
+                View All Placards
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+            <div className="flex items-start">
+              <AlertTriangle className="text-yellow-600 mr-3 mt-1" size={20} />
+              <div>
+                <h4 className="font-semibold text-yellow-900 mb-2">Maritime Safety Requirements</h4>
+                <p className="text-yellow-800 text-sm">
+                  These templates and placards follow official Coast Guard, USCG Auxiliary, and US Power Squadron 
+                  standards. They are designed for actual vessel operations and emergency procedures. 
+                  Always consult current maritime regulations and local requirements.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
