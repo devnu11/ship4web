@@ -47,9 +47,8 @@ The codebase contains several TODO comments indicating areas needing actual data
 
 ## Development Notes
 
-- No build system or package.json detected - this appears to be a standalone TSX component
 - Uses React hooks (useState, useEffect) for state management
-- Styled with Tailwind CSS utility classes
+- Styled with Tailwind CSS utility classes and centralized CSS classes in `src/index.css`
 - Uses Lucide React icons for UI elements
 - Mock data implementation in EventsSection shows expected data structure for Google Calendar integration
 
@@ -59,3 +58,82 @@ The codebase contains several TODO comments indicating areas needing actual data
 - Color scheme follows maritime/scout themes (navy blue, red, sea blue)
 - Content structure supports SEO optimization
 - Modular design allows easy updates to individual sections
+
+## Git Commit Guidelines
+
+Follow these conventions for all commits:
+
+**Subject Line:**
+- Use imperative mood (e.g., "Add feature" not "Added feature")
+- Capitalize the first letter
+- 50 character soft limit
+- No period at the end
+
+**Message Format:**
+- Separate subject from body with a blank line
+- Body lines soft limit at 72 characters (don't wrap URLs)
+- Use body to explain "what" and "why", not "how"
+- Include Claude Code attribution
+
+**Example:**
+```
+Add user authentication system
+
+Implement JWT-based authentication to secure admin routes.
+Users can now log in with email/password and access protected
+areas of the application.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+## Coding Guidelines
+
+**SOLID Principles:**
+- **Single Responsibility**: Each component/function should have one clear purpose
+- **Open/Closed**: Open for extension, closed for modification
+- **Liskov Substitution**: Subtypes must be substitutable for their base types
+- **Interface Segregation**: Clients shouldn't depend on interfaces they don't use
+- **Dependency Inversion**: Depend on abstractions, not concretions
+
+**Code Organization:**
+- Separate data from business logic
+- Extract constants and configuration to dedicated files (like `SITE_CONFIG`)
+- Use custom hooks for reusable logic
+- Keep components focused and composable
+- Prefer composition over inheritance
+
+**Testing Requirements:**
+- Write unit tests for all new code
+- Maintain 90%+ code coverage
+- Test both happy paths and edge cases
+- Mock external dependencies
+- Use descriptive test names that explain behavior
+
+**Data Management:**
+- Keep data separate from UI components
+- Use TypeScript interfaces for data structures
+- Validate data at boundaries (API responses, user input)
+- Use constants for magic numbers and strings
+
+## Development Workflow
+
+**Before Committing:**
+- Run `npx tsc --noEmit` to check for TypeScript errors
+- Run `npm run build` to verify production build works
+- Run tests and verify 90%+ coverage is maintained
+- Fix any TypeScript warnings or build errors
+
+**Development Commands:**
+- `npm run dev` - Start local development server
+- `npm run build` - Build for production
+- `npx tsc --noEmit` - TypeScript type checking without compilation
+- `npm test` - Run unit tests (when test framework is added)
+- `npm run test:coverage` - Check test coverage (when available)
+
+## Deployment
+
+- Push to `main` branch on GitHub triggers automatic deployment
+- Always verify TypeScript and build success before pushing
+- Use `npm run dev` for local development server
