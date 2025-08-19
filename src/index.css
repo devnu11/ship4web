@@ -7,11 +7,12 @@
     /* Layout */
     --header-height: 5rem; /* 80px */
     
-    /* Colors */
-    --color-ship4-blue: #1e40af;
-    --color-ship4-blue-hover: #1d4ed8;
-    --color-ship4-blue-dark: #1e3a8a;
-    --color-ship4-red: #dc2626;
+    /* Colors - Official Ship 4 Palette */
+    --color-ship4-blue: #00205B; /* Ship 4 Navy Blue */
+    --color-ship4-blue-hover: #001a4d;
+    --color-ship4-blue-dark: #001240;
+    --color-ship4-red: #C81010; /* Ship 4 Red */
+    --color-ship4-red-hover: #b30e0e;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-600: #4b5563;
@@ -163,5 +164,44 @@
   
   .feature-title {
     @apply text-xl font-semibold mb-2;
+  }
+}
+
+@layer utilities {
+  /* Ship 4 Color Utilities */
+  .text-ship-navy {
+    color: var(--color-ship4-blue);
+  }
+  
+  .text-ship-red {
+    color: var(--color-ship4-red);
+  }
+  
+  .bg-ship-navy {
+    background-color: var(--color-ship4-blue);
+  }
+  
+  .bg-ship-red {
+    background-color: var(--color-ship4-red);
+  }
+  
+  .hover\:bg-ship-navy:hover {
+    background-color: var(--color-ship4-blue-hover);
+  }
+  
+  .hover\:bg-ship-red:hover {
+    background-color: var(--color-ship4-red-hover);
+  }
+  
+  .hover\:bg-ship-red-hover:hover {
+    background-color: var(--color-ship4-red-hover);
+  }
+  
+  .border-ship-navy {
+    border-color: var(--color-ship4-blue);
+  }
+  
+  .border-ship-red {
+    border-color: var(--color-ship4-red);
   }
 }

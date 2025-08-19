@@ -36,6 +36,9 @@ export const SITE_CONFIG = {
   // Google Integration (TODO: Add actual IDs)
   googleCalendarId: "YOUR_CALENDAR_ID@group.calendar.google.com",
   googleSheetsId: "YOUR_SPREADSHEET_ID",
+
+  // Shopify merchandise store
+  shopUrl: "https://dripship4.myshopify.com/",
   
   // Official Ship 4 Color Palette
   colors: {

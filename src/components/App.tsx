@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { HomePage } from '../pages/HomePage';
 import { TrainingsPage } from '../pages/TrainingsPage';
 import { DocumentationPage } from '../pages/DocumentationPage';
+import { ChandleryPage } from '../pages/ChandleryPage';
 import { SEO } from './SEO';
 import { generateOrganizationSchema, generateWebsiteSchema } from '../utils/structuredData';
 
@@ -59,6 +60,7 @@ export const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/trainings" element={<TrainingsPage />} />
           <Route path="/documentation" element={<DocumentationPage />} />
+          <Route path="/chandlery" element={<ChandleryPage />} />
         </Routes>
       </Router>
     </HelmetProvider>

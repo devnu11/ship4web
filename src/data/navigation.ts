@@ -29,6 +29,10 @@ export const navigationItems: NavigationItem[] = [
     path: '#gallery'
   },
   {
+    label: 'Chandlery',
+    path: '/chandlery'
+  },
+  {
     label: 'Contact',
     path: '#contact'
   }
