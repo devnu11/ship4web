@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { Mail, Phone, MapPin, ExternalLink, Users } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
-export const ContactSection = () => (
+export const ContactSection = memo(() => (
   <section id="contact" className="page-section bg-white">
     <div className="container-content">
       <div className="section-header">
@@ -59,4 +60,6 @@ export const ContactSection = () => (
       </div>
     </div>
   </section>
-);
+));
+
+ContactSection.displayName = 'ContactSection';

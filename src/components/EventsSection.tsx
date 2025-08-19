@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo, useMemo } from 'react';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import type { Event } from '../types';
 import { upcomingEvents } from '../data';
 import { SITE_CONFIG } from '../config/siteConfig';
 
-export const EventsSection = () => {
+export const EventsSection = memo(() => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,6 +20,15 @@ export const EventsSection = () => {
       setLoading(false);
     }, 1000);
   }, []);
+
+  const sortedEvents = useMemo(() => {
+    return events.sort((a, b) => {
+      // Sort by date, putting "TBD" dates at the end
+      if (a.date.includes('TBD')) return 1;
+      if (b.date.includes('TBD')) return -1;
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
+  }, [events]);
 
   return (
     <section id="events" className="page-section bg-white">
@@ -37,7 +46,7 @@ export const EventsSection = () => {
             </div>
           ) : (
             <div className="space-y-4">
-              {events.map(event => (
+              {sortedEvents.map(event => (
                 <div key={event.id} className="bg-gray-50 rounded-lg p-6 border-l-4 border-ship4-blue">
                   <div className="flex flex-col">
                     <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
@@ -78,4 +87,6 @@ export const EventsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+EventsSection.displayName = 'EventsSection';

@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
-export const Footer = () => (
+export const Footer = memo(() => (
   <footer className="bg-gray-900 text-white py-12">
     <div className="container-content">
       <div className="text-center">
@@ -17,4 +18,6 @@ export const Footer = () => (
       </div>
     </div>
   </footer>
-);
+));
+
+Footer.displayName = 'Footer';

@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { Users, Anchor, Calendar } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
-export const AboutSection = () => (
+export const AboutSection = memo(() => (
   <section id="about" className="page-section bg-white">
     <div className="container-content">
       <div className="section-header">
@@ -37,4 +38,6 @@ export const AboutSection = () => (
       </div>
     </div>
   </section>
-);
+));
+
+AboutSection.displayName = 'AboutSection';

@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { Clock, MapPin } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
-export const HeroSection = () => (
+export const HeroSection = memo(() => (
   <section className="relative min-h-screen flex items-center justify-center bg-hero-gradient-complex">
     {/* TODO: Replace with actual hero image from Seabase */}
     <div className="absolute inset-0 bg-black/30"></div>
@@ -35,4 +36,6 @@ export const HeroSection = () => (
       </a>
     </div>
   </section>
-);
+));
+
+HeroSection.displayName = 'HeroSection';

@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { galleryImages } from '../data';
 
-export const GallerySection = () => {
+export const GallerySection = memo(() => {
 
   return (
     <section id="gallery" className="py-20 bg-gray-50">
@@ -17,6 +18,7 @@ export const GallerySection = () => {
                 <img 
                   src={image.src} 
                   alt={image.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -30,4 +32,6 @@ export const GallerySection = () => {
       </div>
     </section>
   );
-};
+});
+
+GallerySection.displayName = 'GallerySection';

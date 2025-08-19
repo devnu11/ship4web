@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { Clock, MapPin } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
-export const MeetingsSection = () => (
+export const MeetingsSection = memo(() => (
   <section id="meetings" className="page-section-alt">
     <div className="container-content">
       <div className="section-header">
@@ -50,4 +51,6 @@ export const MeetingsSection = () => (
       </div>
     </div>
   </section>
-);
+));
+
+MeetingsSection.displayName = 'MeetingsSection';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
@@ -8,14 +8,22 @@ interface HeaderProps {
   isScrolled: boolean;
 }
 
-export const Header = ({ isScrolled }: HeaderProps) => {
+export const Header = memo(({ isScrolled }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
-  const renderNavItem = (item: NavigationItem, isMobile = false) => {
+  const handleMobileMenuToggle = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
+
+  const handleMobileMenuClose = useCallback(() => {
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  const renderNavItem = useCallback((item: NavigationItem, isMobile = false) => {
     const className = isMobile ? 'nav-link-mobile' : 'nav-link';
-    const onClick = isMobile ? () => setIsMobileMenuOpen(false) : undefined;
+    const onClick = isMobile ? handleMobileMenuClose : undefined;
 
     // If it's a hash link and we're on the home page, use anchor tag
     if (item.path.startsWith('#') && isHomePage) {
@@ -33,7 +41,7 @@ export const Header = ({ isScrolled }: HeaderProps) => {
         {item.label}
       </Link>
     );
-  };
+  }, [handleMobileMenuClose, isHomePage]);
 
   return (
   <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -57,7 +65,7 @@ export const Header = ({ isScrolled }: HeaderProps) => {
           {/* Mobile menu button */}
           <button 
             className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={handleMobileMenuToggle}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
@@ -80,4 +88,6 @@ export const Header = ({ isScrolled }: HeaderProps) => {
     </div>
   </header>
   );
-};
+});
+
+Header.displayName = 'Header';
