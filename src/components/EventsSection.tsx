@@ -90,3 +90,5 @@ export const EventsSection = memo(() => {
 });
 
 EventsSection.displayName = 'EventsSection';
+
+export default EventsSection;
