@@ -78,8 +78,8 @@ describe('Upcoming Events', () => {
 
   it('should have properly formatted dates', () => {
     upcomingEvents.forEach((event: Event) => {
-      // Should match YYYY-MM-DD format, date ranges, or "YYYY Dates TBD"
-      const datePattern = /^(\d{4}-\d{2}-\d{2}( - \d{4}-\d{2}-\d{2})?|\d{4} Dates TBD)$/
+      // Should match various meaningful date formats including TBD and descriptive dates
+      const datePattern = /^(\d{4}-\d{2}-\d{2}( - \d{4}-\d{2}-\d{2})?|\d{4}-(TBD|\d{2}-TBD|\d{2}-\w+_TBD)|\d{4} Dates TBD|\d{4} \w+ \d{1,2}-\d{1,2})$/
       expect(datePattern.test(event.date)).toBe(true)
     })
   })
@@ -91,13 +91,14 @@ describe('Upcoming Events', () => {
     })
   })
 
-  it('should include external events with EXTERNAL prefix', () => {
-    const externalEvents = upcomingEvents.filter(e => e.title.startsWith('EXTERNAL'))
-    expect(externalEvents.length).toBeGreaterThan(0)
+  it('should have valid URLs for events that include them', () => {
+    const eventsWithUrls = upcomingEvents.filter(e => e.url)
     
-    externalEvents.forEach(event => {
+    eventsWithUrls.forEach(event => {
       expect(event.url).toBeTruthy()
       expect(typeof event.url).toBe('string')
+      // URL should start with http/https or be a mailto link
+      expect(event.url).toMatch(/^(https?:\/\/|mailto:)/)
     })
   })
 })

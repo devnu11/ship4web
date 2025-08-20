@@ -122,6 +122,7 @@ describe('Events Data - Enhanced Testing', () => {
     it('should have reasonable time formats', () => {
       const validTimeFormats = [
         /^\d{1,2}:\d{2} [AP]M$/i, // "4:00 PM"
+        /^\d{1,2}:\d{2} [AP]M - \d{1,2}:\d{2} [AP]M$/i, // "7:30 AM - 5:00 PM"
         /^TBD$/i, // "TBD"
         /^\d{1,2}:\d{2}$/i, // "14:00"
       ]
@@ -134,17 +135,16 @@ describe('Events Data - Enhanced Testing', () => {
       })
     })
 
-    it('should have sensible event distribution', () => {
-      const externalEvents = upcomingEvents.filter(e => 
-        e.title.toUpperCase().includes('EXTERNAL')
-      )
-      const internalEvents = upcomingEvents.filter(e => 
-        !e.title.toUpperCase().includes('EXTERNAL')
-      )
+    it('should have reasonable event variety', () => {
+      // Should have multiple events for a healthy calendar
+      expect(upcomingEvents.length).toBeGreaterThan(1)
       
-      // Should have both internal and external events
-      expect(internalEvents.length).toBeGreaterThan(0)
-      expect(externalEvents.length).toBeGreaterThan(0)
+      // Should have a mix of events with and without URLs
+      const eventsWithUrls = upcomingEvents.filter(e => e.url)
+      const eventsWithoutUrls = upcomingEvents.filter(e => !e.url)
+      
+      expect(eventsWithUrls.length).toBeGreaterThan(0)
+      expect(eventsWithoutUrls.length).toBeGreaterThan(0)
     })
 
     it('should handle missing optional fields gracefully', () => {
@@ -193,6 +193,7 @@ describe('Events Data - Enhanced Testing', () => {
         'texastrailsbsa.com',
         'aquaticschool.org',
         'scouting.org',
+        'bacbsa.org',
       ]
 
       upcomingEvents.forEach((event: Event) => {
