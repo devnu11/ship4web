@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer';
 import { SEO } from '../../components/SEO';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { Users, AlertTriangle, Download, Printer, CheckCircle, LifeBuoy, Radio, Anchor } from 'lucide-react';
+import html2pdf from 'html2pdf.js';
 
 /**
  * Safety Briefing Placard Page
@@ -31,6 +32,21 @@ export const SafetyBriefingPage = () => {
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownloadPDF = () => {
+    const element = document.getElementById('safety-briefing-content');
+    if (!element) return;
+
+    const opt = {
+      margin: 0.5,
+      filename: 'safety-briefing-placard.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
   };
 
   const briefingItems = [
@@ -141,7 +157,7 @@ export const SafetyBriefingPage = () => {
       />
       <Header isScrolled={isScrolled} />
       
-      <main className="pt-[var(--header-height)]">
+      <main className="pt-[var(--header-height)]" id="safety-briefing-content">
         {/* Page Header */}
         <section className="bg-hero-gradient text-white py-12">
           <div className="container mx-auto px-4">
@@ -173,7 +189,7 @@ export const SafetyBriefingPage = () => {
                 <span>Print Placard</span>
               </button>
               <button
-                onClick={() => window.open('#', '_blank')}
+                onClick={handleDownloadPDF}
                 className="btn-secondary flex items-center space-x-2"
               >
                 <Download size={20} />

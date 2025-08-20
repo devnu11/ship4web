@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer';
 import { SEO } from '../../components/SEO';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { Anchor, AlertTriangle, Download, Printer, CheckCircle, Users, Wind, Eye, Zap } from 'lucide-react';
+import html2pdf from 'html2pdf.js';
 
 /**
  * Pre-Docking Safety Check Placard Page
@@ -31,6 +32,21 @@ export const PreDockingCheckPage = () => {
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownloadPDF = () => {
+    const element = document.getElementById('pre-docking-check-content');
+    if (!element) return;
+
+    const opt = {
+      margin: 0.5,
+      filename: 'pre-docking-check-placard.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
   };
 
   const dockingChecklist = [
@@ -141,7 +157,7 @@ export const PreDockingCheckPage = () => {
       />
       <Header isScrolled={isScrolled} />
       
-      <main className="pt-[var(--header-height)]">
+      <main className="pt-[var(--header-height)]" id="pre-docking-check-content">
         {/* Page Header */}
         <section className="bg-hero-gradient text-white py-12">
           <div className="container mx-auto px-4">
@@ -173,7 +189,7 @@ export const PreDockingCheckPage = () => {
                 <span>Print Placard</span>
               </button>
               <button
-                onClick={() => window.open('#', '_blank')}
+                onClick={handleDownloadPDF}
                 className="btn-secondary flex items-center space-x-2"
               >
                 <Download size={20} />

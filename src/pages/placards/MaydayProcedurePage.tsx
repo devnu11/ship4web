@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer';
 import { SEO } from '../../components/SEO';
 import { SITE_CONFIG } from '../../config/siteConfig';
 import { Radio, AlertTriangle, Download, Printer, Clock, MapPin, Users, Anchor } from 'lucide-react';
+import html2pdf from 'html2pdf.js';
 
 /**
  * Mayday Procedure Placard Page
@@ -25,6 +26,21 @@ export const MaydayProcedurePage = () => {
     window.print();
   };
 
+  const handleDownloadPDF = () => {
+    const element = document.getElementById('mayday-procedure-content');
+    if (!element) return;
+
+    const opt = {
+      margin: 0.5,
+      filename: 'mayday-procedure-placard.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+  };
+
   return (
     <div className="min-h-screen">
       <SEO 
@@ -34,7 +50,7 @@ export const MaydayProcedurePage = () => {
       />
       <Header isScrolled={isScrolled} />
       
-      <main className="pt-[var(--header-height)]">
+      <main className="pt-[var(--header-height)]" id="mayday-procedure-content">
         {/* Page Header */}
         <section className="bg-hero-gradient text-white py-12">
           <div className="container mx-auto px-4">
@@ -66,7 +82,7 @@ export const MaydayProcedurePage = () => {
                 <span>Print Placard</span>
               </button>
               <button
-                onClick={() => window.open('#', '_blank')}
+                onClick={handleDownloadPDF}
                 className="btn-secondary flex items-center space-x-2"
               >
                 <Download size={20} />

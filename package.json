@@ -15,6 +15,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@types/html2pdf.js": "^0.10.0",
+    "html2pdf.js": "^0.10.3",
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
