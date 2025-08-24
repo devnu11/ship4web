@@ -129,6 +129,38 @@
             border-left: 4px solid #ec4899;
             color: #be185d;
         }
+        
+        /* Checkbox styling for requirements */
+        .category-row td:not(:first-child):not(.empty-cell)::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #1e3a8a;
+            border-radius: 3px;
+            background-color: white;
+            margin-right: 8px;
+            vertical-align: top;
+            margin-top: 2px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .category-row td:not(:first-child):not(.empty-cell):hover::before {
+            border-color: #3b82f6;
+            background-color: #f0f9ff;
+        }
+        
+        .category-row td:not(:first-child):not(.empty-cell) {
+            position: relative;
+            padding-left: 32px;
+        }
+        
+        .category-row td:not(:first-child):not(.empty-cell)::before {
+            position: absolute;
+            left: 8px;
+            top: 12px;
+        }
     </style>
 </head>
 <body>
