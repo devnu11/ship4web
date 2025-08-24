@@ -61,11 +61,86 @@
             text-align: center;
             color: #64748b;
         }
+        
+        /* Sign-off requirement color coding */
+        .adult-leader-signoff {
+            background-color: #fef3c7 !important; /* Light amber for adult leader */
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .able-scout-signoff {
+            background-color: #dcfce7 !important; /* Light green for Able scout */
+            border-left: 4px solid #22c55e;
+        }
+        
+        .rank-holder-signoff {
+            background-color: #e0e7ff !important; /* Light indigo for rank holder */
+            border-left: 4px solid #6366f1;
+        }
+        
+        .outside-training-signoff {
+            background-color: #fce7f3 !important; /* Light pink for outside training */
+            border-left: 4px solid #ec4899;
+        }
+        
+        .legend {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .legend h3 {
+            margin-top: 0;
+            color: #334155;
+            font-size: 16px;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin: 5px 10px 5px 0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .legend-adult {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            color: #92400e;
+        }
+        
+        .legend-able {
+            background-color: #dcfce7;
+            border-left: 4px solid #22c55e;
+            color: #166534;
+        }
+        
+        .legend-rank {
+            background-color: #e0e7ff;
+            border-left: 4px solid #6366f1;
+            color: #3730a3;
+        }
+        
+        .legend-outside {
+            background-color: #fce7f3;
+            border-left: 4px solid #ec4899;
+            color: #be185d;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Sea Scout Ranks and Requirements</h1>
+        <div class="legend">
+            <h3>Sign-off Requirements Color Key:</h3>
+            <div class="legend-item legend-adult">Adult Leader Required</div>
+            <div class="legend-item legend-able">Able Scout Required</div>
+            <div class="legend-item legend-rank">Scout of Attained Rank Required</div>
+            <div class="legend-item legend-outside">Outside Training/Certification</div>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -81,7 +156,7 @@
                     <td>Ideals</td>
                     <td>Qualify as member of Sea Scout ship by taking part in admission ceremony</td>
                     <td>Explain symbolism of Sea Scout emblem</td>
-                    <td>Organize and conduct two impressive opening and closing ceremonies for your ship.</td>
+                    <td class="able-scout-signoff">Organize and conduct two impressive opening and closing ceremonies for your ship.</td>
                     <td>Initiate discussion on ideals stated in Sea Promise</td>
                 </tr>
                 <tr class="category-row">
@@ -101,13 +176,13 @@
                 <tr class="category-row">
                     <td>Ideals</td>
                     <td>Demonstrate proper procedure for boarding Sea Scout vessel and landship</td>
-                    <td>Discuss with adult leader how you live Scout Oath and Law in daily life</td>
+                    <td class="adult-leader-signoff">Discuss with adult leader how you live Scout Oath and Law in daily life</td>
                     <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
                 </tr>
                 <tr class="category-row">
                     <td>Ideals</td>
-                    <td>Complete <a href="https://www.scouting.org/training/youth/venturing/">Personal Safety Awareness Training</a> led by adult leader or designee</td>
+                    <td class="adult-leader-signoff">Complete <a href="https://www.scouting.org/training/youth/venturing/">Personal Safety Awareness Training</a> led by adult leader or designee</td>
                     <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
@@ -138,14 +213,14 @@
                 <tr class="category-row">
                     <td>Leadership</td>
                     <td>Describe ship's organization including youth and adult leadership positions</td>
-                    <td>Participate in Introduction to Leadership Skills for Ships (ILSS)</td>
+                    <td class="adult-leader-signoff">Participate in Introduction to Leadership Skills for Ships (ILSS)</td>
                     <td>Either serve and fulfill the responsibilities of a crew leader or an elected officer of your ship -OR- serve as an activity chair for two major ship events. Responsibilities should include planning, directing, and evaluating the event. (These events are in addition to the Ordinary requirement.) -OR- With a boat operator plan a boat dive trip and include all equipment, provisions and location. Using navigation charts to determine course to the location and topographical charts of the sea floor create a dive plan for the participants making the dive.</td>
                     <td>Complete Quartermaster service project while Able Scout</td>
                 </tr>
                 <tr class="category-row">
                     <td>Leadership</td>
                     <td>Demonstrate ability to identify youth and adult leadership insignia and explain chain of command</td>
-                    <td>Complete quarterdeck training as officer or prospective officer</td>
+                    <td class="adult-leader-signoff">Complete quarterdeck training as officer or prospective officer</td>
                     <td class="empty-cell">—</td>
                     <td>Serve as ship officer for at least 6 months</td>
                 </tr>
@@ -160,9 +235,9 @@
                 <tr class="category-row">
                     <td>Swimming</td>
                     <td>Jump feet first into water over your head, Swim 75 yards using strong strokes, then 25 yards elementary backstroke</td>
-                    <td>Pass all requirements for Swimming merit badge</td>
-                    <td>Pass all requirements for Lifesaving merit badge</td>
-                    <td>Complete lifeguard certification through approved organization</td>
+                    <td class="outside-training-signoff">Pass all requirements for Swimming merit badge</td>
+                    <td class="outside-training-signoff">Pass all requirements for Lifesaving merit badge</td>
+                    <td class="outside-training-signoff">Complete lifeguard certification through approved organization</td>
                 </tr>
                 <tr class="category-row">
                     <td>Swimming</td>
@@ -175,7 +250,7 @@
                 <tr class="category-row">
                     <td>Safety</td>
                     <td>Explain uses, advantages, disadvantages of Coast Guard-approved life jackets. Demonstrate the proper use and care of life jackets used by your ship. Discuss your state’s boating laws as they relate to life jacket wear</td>
-                    <td>Discuss Safety Afloat with adult leader or Quartermaster candidate</td>
+                    <td class="adult-leader-signoff">Discuss Safety Afloat with adult leader or Quartermaster candidate</td>
                     <td>Develop and use a customized vessel safety checklist for a boat used by your ship.</td>
                     <td>Know the heavy-weather precautions taken aboard power, sailing, and paddle vessels when dangerous weather approaches, and demonstrate these precautions aboard the vessel used by your ship.</td>
                 </tr>
@@ -191,7 +266,7 @@
                     <td>Use the Distress Communications Form to demonstrate the procedure to send the following VHF emergency messages: Mayday, Pan Pan, and Security.</td>
                     <td>For larger vessels that require a crew, develop a ship’s station bill for your ship and review it with an adult leader. -OR- For smaller vessels with only one or two people aboard, develop a roster of attendees for your ship’s next float trip. Identify lead and sweep boats. Note which boats are carrying rescue and first aid equipment, the trip roster, and medical forms. Review the roster with an adult leader.</td>
                     <td>Know the classes of fires and the substances that will extinguish each type of fire.</td>
-                    <td>Teach Apprentice 5a and Ordinary 5a, 5b, 5c to crew</td>
+                    <td class="rank-holder-signoff">Teach Apprentice 5a and Ordinary 5a, 5b, 5c to crew</td>
                 </tr>
                 <tr class="category-row">
                     <td>Safety</td>
@@ -211,14 +286,14 @@
                     <td>Safety</td>
                     <td class="empty-cell">—</td>
                     <td>Demonstrate proficiency with communication devices on primary vessel</td>
-                    <td>Complete first aid certification</td>
+                    <td class="outside-training-signoff">Complete first aid certification</td>
                     <td class="empty-cell">—</td>
                 </tr>
                 <tr class="category-row">
                     <td>Safety</td>
                     <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
-                    <td>Complete CPR certification</td>
+                    <td class="outside-training-signoff">Complete CPR certification</td>
                     <td class="empty-cell">—</td>
                 </tr>
 
@@ -349,7 +424,7 @@
                     <td class="empty-cell">—</td>
                     <td>Explain purpose of Navigation Rules, International and Inland</td>
                     <td>Demonstrate a working knowledge of Navigation Rules, International and Inland.</td>
-                    <td>Teach Ordinary navigation rules and Able 9b, 9c to crew</td>
+                    <td class="rank-holder-signoff">Teach Ordinary navigation rules and Able 9b, 9c to crew</td>
                     <td class="empty-cell">—</td>
                 </tr>
                 <tr class="category-row">
@@ -357,7 +432,7 @@
                     <td class="empty-cell">—</td>
                     <td>Know general "Rule of Responsibility"</td>
                     <td class="empty-cell">—</td>
-                    <td>Teach Ordinary navigation rules and Able 9b, 9c to crew</td>
+                    <td class="rank-holder-signoff">Teach Ordinary navigation rules and Able 9b, 9c to crew</td>
                 </tr>
                 <tr class="category-row">
                     <td>Navigation Rules</td>
@@ -484,8 +559,8 @@
                 <tr class="category-row">
                     <td>Environment</td>
                     <td class="empty-cell">—</td>
-                    <td>Discuss with an adult leader the Federal Water Pollution Control Act as related to oil discharges. Explain what a “Discharge of Oil Prohibited” placard is and if applicable find it aboard your ship’s vessels.</td>
-                    <td>Discuss with an adult leader the dumping of garbage in the marine environment. Review the contents of the MARPOL placard and locate it aboard your ship’s vessels.</td>
+                    <td class="adult-leader-signoff">Discuss with an adult leader the Federal Water Pollution Control Act as related to oil discharges. Explain what a "Discharge of Oil Prohibited" placard is and if applicable find it aboard your ship's vessels.</td>
+                    <td class="adult-leader-signoff">Discuss with an adult leader the dumping of garbage in the marine environment. Review the contents of the MARPOL placard and locate it aboard your ship's vessels.</td>
                     <td>Discuss the three types of marine sanitation devices and the laws governing sewage discharge.</td>
                 </tr>
                 <tr class="category-row">
@@ -522,7 +597,7 @@
                     <td>Cruising</td>
                     <td class="empty-cell">—</td>
                     <td>Plan and participate in an overnight cruise. If you cannot sleep aboard your vessel, participating in a multi-day trip will meet this requirement.</td>
-                    <td>Earn Long Cruise badge</td>
+                    <td class="able-scout-signoff">Earn Long Cruise badge</td>
                     <td class="empty-cell">—</td>
                 </tr>
                 <tr class="category-row">
@@ -536,7 +611,7 @@
                 <tr class="category-row">
                     <td>Boating Safety Course</td>
                     <td class="empty-cell">—</td>
-                    <td>Complete Texas NASBLA-approved boating safety course</td>
+                    <td class="outside-training-signoff">Complete Texas NASBLA-approved boating safety course</td>
                     <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
                 </tr>
@@ -566,6 +641,7 @@
             </tbody>
         </table>
         
+       
         <div style="margin-top: 30px; padding: 15px; background-color: #f0f9ff; border-left: 4px solid #0ea5e9; border-radius: 4px;">
             <h3 style="margin-top: 0; color: #0c4a6e;">Official Sea Scout Requirements (Effective August 2024):</h3>
             <p><strong>Source:</strong> All requirements are taken directly from the official Sea Scout rank pages at <a href="https://seascout.org/advancement-central/">https://seascout.org/advancement-central/</a></p>
