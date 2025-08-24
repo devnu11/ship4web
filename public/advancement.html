@@ -136,11 +136,7 @@
         }
         
         .legend {
-            margin-top: 20px;
             padding: 15px;
-            background-color: #f8fafc;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
         }
         
         .legend h3 {
@@ -156,6 +152,70 @@
             border-radius: 4px;
             font-size: 12px;
             font-weight: bold;
+        }
+        
+        .checkbox-example {
+            display: inline-flex;
+            align-items: center;
+            margin: 3px 10px 3px 0;
+            font-size: 12px;
+        }
+        
+        .checkbox-visual {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #1e3a8a;
+            border-radius: 3px;
+            background-color: white;
+            margin-right: 8px;
+            position: relative;
+        }
+        
+        .checkbox-visual.ready::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 16px;
+            background-color: #059669;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transform-origin: center;
+        }
+        
+        .checkbox-visual.signed::before,
+        .checkbox-visual.signed::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 16px;
+            background-color: #059669;
+        }
+        
+        .checkbox-visual.signed::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        .checkbox-visual.signed::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        
+        .checkbox-visual.online {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        
+        .checkbox-visual.online::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 1px;
         }
         
         .legend-adult {
@@ -273,6 +333,10 @@
                 margin: 3px 6px 3px 0;
             }
             
+            .legend-section {
+                page-break-inside: avoid;
+            }
+            
             .category-row td:not([rowspan]):not(.empty-cell)::before {
                 width: 12px;
                 height: 12px;
@@ -300,9 +364,26 @@
             </div>
         </h1>
         <div class="legend">
-            <p>Unless otherwise noted, anyone who has attained that rank may signoff those requirements</p>
-            <div class="legend-item legend-adult">Adult Leader Required</div>
-            <div class="legend-item legend-outside">Outside Training/Certification Required</div>
+            <div class="legend-section">
+                <div class="legend-item">Unless otherwise noted, anyone who has attained that rank may signoff those requirements</div>
+                <div class="legend-item legend-adult">Adult Leader Required</div>
+                <div class="legend-item legend-outside">Outside Training/Certification Required</div>
+            </div>
+            <div class="legend-section">
+                <div class="legend-item" style="margin-top: 10px; font-weight: bold;">Checkbox Marking Instructions:</div>
+                <div class="checkbox-example">
+                    <div class="checkbox-visual ready"></div>
+                    <span>Ready for signoff</span>
+                </div>
+                <div class="checkbox-example">
+                    <div class="checkbox-visual signed"></div>
+                    <span>Signed off</span>
+                </div>
+                <div class="checkbox-example">
+                    <div class="checkbox-visual online"></div>
+                    <span>Entered online</span>
+                </div>
+            </div>
         </div>
         <table>
             <thead>
