@@ -161,6 +161,54 @@
             left: 8px;
             top: 12px;
         }
+        
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 11px;
+            }
+            
+            td {
+                font-size: 10px;
+                padding: 6px 4px;
+            }
+            
+            th {
+                font-size: 11px;
+                padding: 8px 4px;
+            }
+            
+            h1 {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            
+            .legend {
+                font-size: 10px;
+                margin-top: 15px;
+                padding: 10px;
+            }
+            
+            .legend h3 {
+                font-size: 12px;
+            }
+            
+            .legend-item {
+                font-size: 9px;
+                padding: 3px 6px;
+                margin: 3px 6px 3px 0;
+            }
+            
+            .category-row td:not(:first-child):not(.empty-cell)::before {
+                width: 12px;
+                height: 12px;
+                top: 8px;
+            }
+            
+            .category-row td:not(:first-child):not(.empty-cell) {
+                padding-left: 24px;
+            }
+        }
     </style>
 </head>
 <body>
