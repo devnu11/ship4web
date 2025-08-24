@@ -20,6 +20,41 @@
             color: #1e3a8a;
             text-align: center;
             margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .name-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 2px solid #1e3a8a;
+            border-radius: 8px;
+            padding: 12px 16px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+        
+        .name-box label {
+            display: block;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        
+        .name-box input {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #e5e7eb;
+            padding: 4px 0;
+            font-size: 16px;
+            background: transparent;
+            outline: none;
+        }
+        
+        .name-box input:focus {
+            border-bottom-color: #3b82f6;
         }
         table {
             width: 100%;
@@ -70,9 +105,6 @@
             border-bottom: 3px solid #1e3a8a;
         }
         
-        tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
         tr:hover {
             background-color: #e0f2fe;
         }
@@ -88,13 +120,13 @@
             border-left: 4px solid #f59e0b;
         }
         
-        .able-scout-signoff {
-            background-color: #dcfce7 !important; /* Light green for Able scout */
+        .rank-holder-signoff {
+            background-color: #dcfce7 !important; /* Light green for rank holder */
             border-left: 4px solid #22c55e;
         }
         
-        .rank-holder-signoff {
-            background-color: #e0e7ff !important; /* Light indigo for rank holder */
+        .nasbla-signoff {
+            background-color: #e0e7ff !important; /* Light indigo for NASBA */
             border-left: 4px solid #6366f1;
         }
         
@@ -204,6 +236,26 @@
                 margin-bottom: 15px;
             }
             
+            .name-box {
+                border: 1px solid #333;
+                padding: 8px 12px;
+                box-shadow: none;
+                min-width: 180px;
+            }
+            
+            .name-box label {
+                font-size: 12px;
+            }
+            
+            .name-box input {
+                font-size: 14px;
+                border-bottom: 1px solid #666;
+            }
+            
+            .name-box input::placeholder {
+                color: transparent;
+            }
+            
             .legend {
                 font-size: 10px;
                 margin-top: 15px;
@@ -240,7 +292,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sea Scout Ranks and Requirements</h1>
+        <h1>Sea Scout Ranks and Requirements
+            <div class="name-box">
+                <label for="scout-name">Scout Name:</label>
+                <input type="text" id="scout-name" name="scout-name" placeholder="Enter name here">
+            </div>
+        </h1>
         <div class="legend">
             <p>Unless otherwise noted, anyone who has attained that rank may signoff those requirements</p>
             <div class="legend-item legend-adult">Adult Leader Required</div>
@@ -390,36 +447,8 @@
                 </tr>
                 <tr class="category-row">
                     <td class="empty-cell">—</td>
-                    <td class="empty-cell">—</td>
+                    <td class="outside-training-signoff">Complete Texas NASBLA-approved boating safety course</td>
                     <td class="outside-training-signoff">Complete CPR certification</td>
-                    <td class="empty-cell">—</td>
-                </tr>
-            </tbody>
-
-            <tbody class="category-group">
-                <tr class="category-row">
-                    <td rowspan="0">Galley</td>
-                    <td class="empty-cell">—</td>
-                    <td>Before an activity, submit a menu that uses cooked and uncooked dishes, a list of provisions, and estimated costs for a day's meal (breakfast, lunch, and dinner). Once the provision list is approved, help obtain the items on the list.</td>
-                    <td class="empty-cell">—</td>
-                    <td class="empty-cell">—</td>
-                </tr>
-                <tr class="category-row">
-                    <td class="empty-cell">—</td>
-                    <td>Explain the use of charcoal, isobutane, white gas, and propane. Include safety precautions for each.</td>
-                    <td class="empty-cell">—</td>
-                    <td class="empty-cell">—</td>
-                </tr>
-                <tr class="category-row">
-                    <td class="empty-cell">—</td>
-                    <td>Prepare breakfast, lunch, and dinner while on the activity. Demonstrate your ability to properly use the galley equipment or personal cooking gear generally used by your ship. If your vessel does not have a galley space, these may be done ashore.</td>
-                    <td class="empty-cell">—</td>
-                    <td class="empty-cell">—</td>
-                </tr>
-                <tr class="category-row">
-                    <td class="empty-cell">—</td>
-                    <td>Demonstrate appropriate sanitation techniques for food preparation and meal cleanup.</td>
-                    <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
                 </tr>
             </tbody>
@@ -501,9 +530,8 @@
                     <td>Take charge of a vessel used by your ship and give all commands to the crew for setting and weighing anchor in several wind and current situations.</td>
                 </tr>
                 <tr class="category-row">
-                    <td>Ground Tackle</td>
-                    <td>Demonstrate the ability to set and weigh anchor appropriate for your vessel.</td>
                     <td class="empty-cell">—</td>
+                    <td>Demonstrate the ability to set and weigh anchor appropriate for your vessel.</td>
                     <td>While on a cruise assist in the construction of an anchor watch schedule and stand one watch. -OR- Establish a watch for boats secured to a shore or beach and stand one watch.</td>
                     <td class="empty-cell">—</td>
                 </tr>
@@ -526,13 +554,13 @@
                 </tr>
                 <tr class="category-row">
                     <td class="empty-cell">—</td>
-                    <td>Know general "Rule of Responsibility"</td>
+                    <td class="nasbla-signoff">Know general "Rule of Responsibility"</td>
                     <td class="empty-cell">—</td>
-                    <td>Teach Ordinary navigation rules and Able 9b, 9c to crew</td>
+                    <td class="empty-cell">—</td>
                 </tr>
                 <tr class="category-row">
                     <td class="empty-cell">—</td>
-                    <td>Define stand-on and give-way vessels for the following situations: meeting, crossing, and overtaking for both power and sailing vessels.</td>
+                    <td class="nasbla-signoff">Define stand-on and give-way vessels for the following situations: meeting, crossing, and overtaking for both power and sailing vessels.</td>
                     <td>Understand the system of aids to navigation employed in your area. Include buoys, lights, and daymarks, and their significance and corresponding chart symbols.</td>
                     <td class="empty-cell">—</td>
                 </tr>
@@ -688,8 +716,8 @@
                 <tr class="category-row">
                     <td rowspan="0">Cruising</td>
                     <td class="empty-cell">—</td>
-                    <td>Plan and participate in an overnight cruise. If you cannot sleep aboard your vessel, participating in a multi-day trip will meet this requirement.</td>
-                    <td>Earn Long Cruise badge</td>
+                    <td class="adult-leader-signoff">Plan and participate in an overnight cruise. If you cannot sleep aboard your vessel, participating in a multi-day trip will meet this requirement.</td>
+                    <td class="adult-leader-signoff">Earn Long Cruise badge</td>
                     <td class="empty-cell">—</td>
                 </tr>
                 <tr class="category-row">
@@ -703,13 +731,30 @@
 
             <tbody class="category-group">
                 <tr class="category-row">
-                    <td rowspan="0">Boating Safety Course</td>
+                    <td rowspan="0">Galley</td>
                     <td class="empty-cell">—</td>
-                    <td class="outside-training-signoff">Complete Texas NASBLA-approved boating safety course</td>
+                    <td>Before an activity, submit a menu that uses cooked and uncooked dishes, a list of provisions, and estimated costs for a day's meal (breakfast, lunch, and dinner). Once the provision list is approved, help obtain the items on the list.</td>
                     <td class="empty-cell">—</td>
                     <td class="empty-cell">—</td>
                 </tr>
-
+                <tr class="category-row">
+                    <td class="empty-cell">—</td>
+                    <td>Explain the use of charcoal, isobutane, white gas, and propane. Include safety precautions for each.</td>
+                    <td class="empty-cell">—</td>
+                    <td class="empty-cell">—</td>
+                </tr>
+                <tr class="category-row">
+                    <td class="empty-cell">—</td>
+                    <td>Prepare breakfast, lunch, and dinner while on the activity. Demonstrate your ability to properly use the galley equipment or personal cooking gear generally used by your ship. If your vessel does not have a galley space, these may be done ashore.</td>
+                    <td class="empty-cell">—</td>
+                    <td class="empty-cell">—</td>
+                </tr>
+                <tr class="category-row">
+                    <td class="empty-cell">—</td>
+                    <td>Demonstrate appropriate sanitation techniques for food preparation and meal cleanup.</td>
+                    <td class="empty-cell">—</td>
+                    <td class="empty-cell">—</td>
+                </tr>
             </tbody>
 
             <tbody class="category-group">
