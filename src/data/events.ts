@@ -3,32 +3,6 @@ import { SITE_CONFIG } from '../config/siteConfig';
 
 export const upcomingEvents: Event[] = [
   {
-    id: 1,
-    title: "First Meeting",
-    date: "2025-08-24",
-    time: "4:00 PM-5:00 PM",
-    location: SITE_CONFIG.meetingVenue,
-    description: `First formal meeting of ${SITE_CONFIG.shipShortName}.`
-  },
-  {
-    id: 2,
-    title: "Pool Party & Quarter Deck Training",
-    date: "2025-09-01",
-    time: "1:30 PM-5:00 PM",
-    location: "409 Riva Ridge Place, Austin, TX",
-    description: "Over Zoom - Skipper Palm teaches leadership, planning and communication. And then the crew gets wet!",
-    url: "mailto:dallas@rliv.net?subject=Quarter Deck Training on September 1st"
-  },
-  {
-    id: 3,
-    title: "Kayaking at Jessica Hollis Park",
-    date: "2025-09-14",
-    time: "10:00 AM-5:00 PM",
-    location: "Jessica Hollis Park, 14100 Low Water Crossing Rd., Austin, TX 78732",
-    description: "Meet at Patriots Hall to carpool. Scouts are cooking lunch. Bring swimwear, towel, change of clothes, sunscreen, hat, water bottle, and a life jacket if you have one.",
-    url: "https://lcraparks.com/parks/jessica-hollis-park"
-  },
-  {
     id: 4,
     title: "Individual Training - Council Swimming and Water Rescue Training",
     date: "2025-09-14",

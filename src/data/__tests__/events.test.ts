@@ -62,13 +62,6 @@ describe('Upcoming Events', () => {
     expect(uniqueIds.size).toBe(ids.length)
   })
 
-  it('should contain First Meeting event', () => {
-    const firstMeeting = upcomingEvents.find(e => e.title === 'First Meeting')
-    expect(firstMeeting).toBeDefined()
-    expect(firstMeeting?.location).toBe('Patriots Hall')
-    expect(firstMeeting?.date).toBe('2025-08-24')
-  })
-
   it('should contain Sea Scout Minto Rendezvous', () => {
     const rendezvous = upcomingEvents.find(e => e.title.includes('Minto Rendezvous'))
     expect(rendezvous).toBeDefined()
