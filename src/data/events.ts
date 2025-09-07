@@ -16,35 +16,35 @@ export const upcomingEvents: Event[] = [
     date: "2025-09-01",
     time: "1:30 PM-5:00 PM",
     location: "409 Riva Ridge Place, Austin, TX",
-    description: "Over Zoon Skipper Palm teaches leadership, planning and communication. And then the crew gets wet!",
+    description: "Over Zoom - Skipper Palm teaches leadership, planning and communication. And then the crew gets wet!",
     url: "mailto:dallas@rliv.net?subject=Quarter Deck Training on September 1st"
   },
   {
     id: 3,
-    title: "CAC High Adventure Day",
-    date: "2025-09-13",
-    time: "8:30 AM-5:00 PM",
-    location: "Lost Pines",
-    description: "Shooting, swimming and climbing.",
-    url: "https://scoutingevent.com/564-94448"
+    title: "Kayaking at Jessica Hollis Park",
+    date: "2025-09-14",
+    time: "10:00 AM-5:00 PM",
+    location: "Jessica Hollis Park, 14100 Low Water Crossing Rd., Austin, TX 78732",
+    description: "Meet at Patriots Hall to carpool. Scouts are cooking lunch. Bring swimwear, towel, change of clothes, sunscreen, hat, water bottle, and a life jacket if you have one.",
+    url: "https://lcraparks.com/parks/jessica-hollis-park"
   },
   {
     id: 4,
+    title: "Individual Training - Council Swimming and Water Rescue Training",
+    date: "2025-09-14",
+    time: "4:00 PM-9:00 PM",
+    description: "Training for Leaders and Scouts older than 15.  Requires attending Zoom session before the class.",
+    location: "Blackhawk Amenity Center, 3111 Speidel Drive, Pflugerville, TX 78660",
+    url: "https://scoutingevent.com/564-104180"
+  },
+  {
+    id: 5,
     title: "SOLO SCOUT ADVENTURE - Sea Scout Minto Rendezvous",
     date: "2025-09-19 - 2025-09-21",
     time: "5:00 PM-11:00 AM",
     location: "Camp Strake, SHAC",
     description: "Regional Sea Scout rendezvous. Compete with other ships in sailing, seamanship, and leadership challenges.",
     url: "https://shacbsa.org/minto-rendezvous"
-  },
-  {
-    id: 5,
-    title: "US Coast Guard - Safety at Sea",
-    date: "2025-11-Saturday_TBD",
-    time: "7:30 AM - 5:00 PM",
-    location: "US Coast Guard Station, Galveston, TX",
-    description: "Fire a flare gun (the only legal way to do so).  Learn to start (and fight) fuel fires.  Don a survival suit and swim to an island.",
-    url: "https://www.bacbsa.org/activities/safety-at-sea-2018/65520"
   },
   {
     id: 6,

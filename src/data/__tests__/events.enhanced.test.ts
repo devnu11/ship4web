@@ -122,6 +122,7 @@ describe('Events Data - Enhanced Testing', () => {
     it('should have reasonable time formats', () => {
       const validTimeFormats = [
         /^\d{1,2}:\d{2} [AP]M$/i, // "4:00 PM"
+        /^\d{1,2}:\d{2} [AP]M-\d{1,2}:\d{2} [AP]M$/i, // "4:00 PM-5:00 PM"
         /^\d{1,2}:\d{2} [AP]M - \d{1,2}:\d{2} [AP]M$/i, // "7:30 AM - 5:00 PM"
         /^TBD$/i, // "TBD"
         /^\d{1,2}:\d{2}$/i, // "14:00"
@@ -194,6 +195,7 @@ describe('Events Data - Enhanced Testing', () => {
         'aquaticschool.org',
         'scouting.org',
         'bacbsa.org',
+        'lcraparks.com',
       ]
 
       upcomingEvents.forEach((event: Event) => {
