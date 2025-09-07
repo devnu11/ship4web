@@ -2,6 +2,11 @@ import { describe, it, expect, vi } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { EventsSection } from '../EventsSection'
 
+// Mock the calendar utility
+vi.mock('../../utils/scoutingCalendar', () => ({
+  fetchScoutingEvents: vi.fn().mockResolvedValue([])
+}))
+
 // Mock the data
 vi.mock('../../config/siteConfig', () => ({
   SITE_CONFIG: {

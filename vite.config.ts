@@ -7,4 +7,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  server: {
+    proxy: {
+      '/api/scouting': {
+        target: 'https://api.scouting.org',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/scouting/, ''),
+        secure: true
+      }
+    }
+  }
 })

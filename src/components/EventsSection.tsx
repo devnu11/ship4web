@@ -2,22 +2,42 @@ import { useState, useEffect, memo, useMemo } from 'react';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import type { Event } from '../types';
 import { upcomingEvents } from '../data';
+import { fetchScoutingEvents } from '../utils/scoutingCalendar';
 
 export const EventsSection = memo(() => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // TODO: Implement Google Calendar API integration
   useEffect(() => {
-    // Placeholder for Google Calendar integration
-    // When implemented, replace upcomingEvents with actual Google Calendar data
-    // fetchGoogleCalendarEvents(SITE_CONFIG.googleCalendarId);
+    const loadEvents = async () => {
+      try {
+        setLoading(true);
+        
+        // Fetch Scouting.org calendar events
+        const scoutingEvents = await fetchScoutingEvents();
+        
+        // Combine with static events, putting Scouting.org events first
+        const combinedEvents = [...scoutingEvents, ...upcomingEvents];
+        
+        // Remove duplicates based on title and date similarity
+        const uniqueEvents = combinedEvents.filter((event, index, array) => {
+          return !array.slice(0, index).some(existingEvent => 
+            existingEvent.title.toLowerCase() === event.title.toLowerCase() &&
+            existingEvent.date === event.date
+          );
+        });
+        
+        setEvents(uniqueEvents);
+      } catch (error) {
+        console.error('Failed to load events:', error);
+        // Fallback to static events if fetching fails
+        setEvents(upcomingEvents);
+      } finally {
+        setLoading(false);
+      }
+    };
     
-    // Load current events
-    setTimeout(() => {
-      setEvents(upcomingEvents);
-      setLoading(false);
-    }, 1000);
+    loadEvents();
   }, []);
 
   const sortedEvents = useMemo(() => {
