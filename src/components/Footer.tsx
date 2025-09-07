@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { Anchor } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 
 export const Footer = memo(() => (

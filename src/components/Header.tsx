@@ -1,6 +1,6 @@
 import { useState, useCallback, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Anchor } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
 import { navigationItems, type NavigationItem } from '../data';
 

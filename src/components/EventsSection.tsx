@@ -2,7 +2,6 @@ import { useState, useEffect, memo, useMemo } from 'react';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import type { Event } from '../types';
 import { upcomingEvents } from '../data';
-import { SITE_CONFIG } from '../config/siteConfig';
 
 export const EventsSection = memo(() => {
   const [events, setEvents] = useState<Event[]>([]);
